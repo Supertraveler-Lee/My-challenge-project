@@ -1,0 +1,215 @@
+body {
+      margin: 0 auto;
+      padding: 0 auto;
+      background-color: #d3d3d3;
+    }
+    /*@header css*/
+    header {
+      height: 70px;
+      font-family: arial, verdana, sans-serif;
+      background-color: #404040;
+      box-shadow: 3px 3px rgba(0,0,0,.6);
+    }
+    .cleanfix::after {
+      display: block;
+      clear: both;
+      content: "";
+      *zoom: 1;
+    }
+    header img {
+      margin: 10px 20px;
+      width: 120px;
+      height: 60px;
+    }
+    .nav-list {
+      float: right;
+      line-height: 40px;
+    }
+    .nav-list ul {
+      float: right; 
+      display: inline-block;
+      margin-right: 20px;
+      text-align: center;
+    }
+    .nav-list li {
+      float: left;
+      margin-left: 20px;
+      font-size: 13px;
+    }
+    .nav-list a {
+      text-decoration: none;
+      color: #FFF;
+    }
+    .last-nav a {
+      color: #C0C0C0;
+    }
+    /*@section css*/
+    .first-paragraph {
+      margin: 15px;
+      padding: 15px;
+      background-color: #FFF;
+      box-shadow: 3px 3px rgba(0,0,0,.6);
+    }
+    .first-paragraph h2 {
+      font-size: 15px;
+      color: #808080;
+    }
+    .first-paragraph h2 + p {
+      font-size: 12px;
+      color: #808080;
+    }
+    .text-indent {
+      text-indent: 2em;
+    }
+    .text-indent a {
+      color: #0000FF;
+    }
+    .second-paragraph {
+      margin: 15px;
+      padding: 15px;
+      background-color: #FFF;
+      box-shadow: 3px 3px rgba(0,0,0,.6);
+    }
+    .second-paragraph h2 {
+      font-size: 12px;
+      color: #808080;
+    }
+    .second-paragraph h2 + p {
+      font-size: 12px;
+      color: #808080;
+    }
+    .second-paragraph ul {
+      list-style-type: none;
+    }
+    .third-paragraph {
+      margin: 15px;
+      padding: 15px;
+      background-color: #FFF;
+      box-shadow: 3px 3px rgba(0,0,0,.6);
+    }
+    .third-paragraph div {
+      margin: 20px 0 0 30px;
+      width: 130px;
+      height: 130px;
+      border: 1px solid #800;
+    }
+     .third-paragraph p {
+      margin: 7px;
+      padding: 0;
+      font-size: 13px;
+      line-height: 15px;
+      text-align: center;
+    }
+    .third-paragraph img {
+      margin: 0 10px 10px 10px;
+    }
+    .fouth-paragraph {
+      margin: 15px;
+      padding: 15px;
+      background-color: #FFF;
+      box-shadow: 3px 3px rgba(0,0,0,.6);
+    }
+    .fouth-paragraph h2 {
+      font-size: 15px;
+      color: #808080;
+    }
+    .fouth-paragraph h2 + p {
+      font-size: 12px;
+      color: #808080;
+    }
+    .table {
+      width: 100%;
+      text-align: left;
+      background-color: #C0C0C0;
+    }
+    .table .table-title {
+      background: #000;
+      color: #FFF;
+    }
+    .table tr {
+      padding: 0;
+      background-color: #FFF;
+    }
+    .table .last-row {
+      background-color: #C0C0C0;
+    }
+    aside {
+      margin: 15px;
+      padding: 15px;
+      box-shadow: 3px 3px rgba(0,0,0,.6);
+      background-color: #FFF;
+    }
+    aside h1 {
+      margin: 0;
+      font-size: 18px;
+    }
+    
+    /*@form css*/
+    form {
+      font-size: 15px;
+    }
+    .email span {
+      margin-left: 300px; 
+    }
+    input[name="email"] {
+      margin: auto auto 0px 10px; 
+      border: 1px solid #C0C0C0;
+    }
+    
+    form P {
+      margin: 10px auto 10px 428px;
+      font-size: 13px;
+      color: #C0C0C0;
+    }
+    form div {
+      margin-bottom: 10px; 
+    }
+    .email .psw {
+      margin-left: 330px;
+    }
+    input[name="psw"] {
+      margin: auto auto 10px 10px; 
+      border: 1px solid #C0C0C0;
+    }
+    input[name="psw_again"] {
+      margin: auto auto 0px 10px; 
+      border: 1px solid #C0C0C0;
+    }
+    .sex span {
+      margin: 0 10px 0 380px
+    }
+    .city span {
+      margin: 0 10px 0px 380px;
+    }
+    .hobby span {
+      margin: 0 10px 0 380px;
+    }
+    .describle span {
+      margin: 0 10px 0 350px;
+    }
+    textarea {
+      vertical-align: super;
+    }
+    input[name="submit"] {
+      display: inline-block;
+      width: 100%;
+      height: 40px;
+      border-radius: 8px/5px;
+      text-align: center;
+      background-color: #0000ff;
+      color: #FFF;
+      font-size: 16px;
+      font-weight: bolder;
+    }
+    footer {
+      width: 100%;
+      height: 60px;
+      border: 1px solid #000;
+      margin: 0;
+      background-color: #000;
+      color: #FFF;
+    }
+    footer p {
+      font-size: 12px;
+      text-align: center;
+    }
