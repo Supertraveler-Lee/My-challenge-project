@@ -88,37 +88,41 @@
     </article>
   <aside>
     <h1>以后这是一个侧栏，这是侧栏的标题</h1>
-    <form>
+    <form action="">
       <div class="email">
-        <span>请输入邮箱地址</span> <input type="text" name="email" value="这是一个文本输入框">
+        <label for="email"><span>请输入邮箱地址</span></label>
+        <input type="text" name="email" id="email" value="这是一个文本输入框">
         <p>邮箱地址请按要求格式输入</p>
-        <span class="psw">请输入密码</span> <input type="password" name="psw" value="*********">
+        <label for="psw"><span class="psw">请输入密码</span></label>
+        <input type="password" name="psw" id="psw" value="*********">
         <br />
-        <span>请重复输入密码</span> <input type="password" name="psw_again" value="********">
+        <label for="psw_again"><span>请重复输入密码</span></label>
+        <input type="password" name="psw_again" id="psw_again" value="********">
         <p>密码请为6-16位英文数字</p>
       </div>
       <br />
       <div class="sex">
-      <span >性别</span>
-      <input type="radio" name="sex" value="男" checked>男
-      <input type="radio" name="sex" value="女">女
+        <label for="sex"><span>性别</span></label>
+        <input type="radio" name="sex" id="sex" value="男" checked>男
+        <input type="radio" name="sex" value="女">女
       </div>
       <div class="city">
-        <span>城市</span>
-        <select name="city">
+        <label for="city"><span>城市</span></label>
+        <select name="city" id="city">
           <option selected>北京</option>
           <option>上海</option>
           <option>广州</option>
         </select>
       </div>
       <div class="hobby">
-      <span>爱好</span>
+      <label for="hobby"><span>爱好</span></label>
       <input type="checkbox" name="hobby" value="sports">运动
       <input type="checkbox" name="hobby" value="art">艺术
       <input type="checkbox" name="hobby" value="science">科学
       </div>
         <div class="describle">
-        <span>个人描述</span><textarea rows="5" cols="80">这是一个多行文本框</textarea>
+        <label><span>个人描述</span></label>
+        <textarea rows="5" cols="80" placeholder="这是一个多行文本框"></textarea>
       </div>
       <input type="submit" name="submit" value="确认提交">
     </form> 
