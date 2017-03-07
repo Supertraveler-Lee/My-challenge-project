@@ -1,135 +1,81 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="utf-8">
-  <title>task1</title>
-  <link rel="stylesheet" type="text/css" href="./ife2.css">
+  <title>task3</title>
+  <meta charset="utf-8">
+  <style type="text/css">
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .body {
+      font-family: "微软雅黑";
+    }
+    .wrapper {
+      padding: 20px;
+      background-color: #eee;
+      border: 1px solid #999;
+    }
+    .wrapper::after {
+      display: block;
+      clear: both;
+      content: "";
+      height: 0;
+    }
+    .team-name {
+      float: left;
+      position: relative;
+      padding: 20px;
+      width: 160px;
+      height: 80px;
+      border: 1px solid #999;
+      background: #FFF;
+    }
+    .team-name p {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .person-logo {
+      float: right;
+      padding: 20px;
+      width: 80px;
+      border: 1px solid #999;
+      background: #FFF;
+    }
+    .person-logo img {
+      padding-bottom: 20px;
+    }
+    .person-logo div {
+      margin-bottom: -20px;
+    }
+    .team-intro {
+      margin: auto 160px auto 240px;
+      padding: 20px;
+      border: 1px solid #999;
+      background: #FFF;
+    } 
+  </style>
 </head>
 <body>
-  <header class="cleanfix">
-    <a href="https://www.baidu.com"><img src="http://placehold.it/50x25" alt="百度"></a>
-    <div class="nav-list">
-      <ul>
-        <li><a href="#">导航标题一</a></li>
-        <li><a href="#">导航标题二</a></li>
-        <li><a href="#">导航标题三</a></li>
-        <li class="last-nav"><a href="#">导航标题四</a></li>
-      </ul>
+  <div class="wrapper">
+    <div class="team-name">   
+      <img src="https://unsplash.it/80">
+      <p>团队名称</p>
     </div>
-  </header>
-  <section>
-    <article class="first-paragraph">
-      <h1>文章一级标题</h1>
-      <h2>文章二级标题</h2>
-      <p>文章作者 文章发表时间</p>
-      <p class="text-indent">这是一个很长的段落，这是一个很长的段落，这是一个很长的段落,这是一个很长的段落这是一个很长的段落，准备换行<br />
-      这是一个很长的段落这是一个很长的段落这是一个很长的段落，这是一个很长的段落<a href="http://ife.baidu.com">这里有一个链接到http://ife.baidu.com</a>这是一个很长的段落</p>
-      <img src="http://placehold.it/350x150">
-      <p>这是一个很长的段落这是一个很长的段落这是一个很长的段落这是一个很长的段落，<a href="" target="_blank">这里有一个链接到新窗口</a>这里有一个链接到</p>
-    </article>
-    <article class="second-paragraph">
-      <h1>另外一个一级标题</h1>
-      <h2>另外一个二级标题</h2>
-      <p>文章作者 文章发表时间</p>
-      <p class="text-indent">这是一个很长的段落，这是一个很长的段落，这是一个很长的段落,这是一个很长的段落这是一个很长的段落<br />
-      这是一个很长的段落这是一个很长的段落这是一个很长的段落,<a href="http://ife.baidu.com">这里有一个链接到http://ife.baidu.com</a>这是一个很长的段落</p>
-      <img src="http://placehold.it/350x350">
-      <ul>
-        <li>列表项目一</li>
-        <li>列表项目二</li>
-        <li>列表项目三</li>
-      </ul>
-    </article>
-    <article class="third-paragraph">
-      <h1>图片</h1>
+    <div class="person-logo">
       <div>
-        <p>好看的图片</p>
-        <img src="http://placehold.it/110x90">
+        <img src="https://unsplash.it/80" alt="person-logo">
+        <img src="https://unsplash.it/80" alt="person-logo">
+        <img src="https://unsplash.it/80" alt="person-logo">
+        <img class="last-pic" src="https://unsplash.it/80" alt="person-logo">
       </div>
-      <div>
-        <p>好看的图片</p>
-        <img src="http://placehold.it/110x90">
-      </div>
-      <div>
-        <p>好看的图片</p>
-        <img src="http://placehold.it/110x90">
-      </div>
-    </article>
-    <article class="fouth-paragraph">
-      <h1>最后一篇文章一级标题</h1>
-      <h2>另外一个二级标题</h2>
-      <p>文章作者 文章发表时间</p>
-      <table class="table">
-        <tr class="table-title">
-          <th>表头</th>
-          <th>表头</th>
-          <th>表头</th>
-        </tr>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作<a></td>
-        </tr>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作<a></td>
-        </tr>
-        <tr>
-          <td>表内容单元格</td>
-          <td>表内容单元格</td>
-          <td><a href="#">操作<a></td>
-        </tr>
-        <tr class="last-row">
-          <td>总计</td>
-          <td cowspan="2">1000</td>
-        </tr>
-      </table>
-    </article>
-  <aside>
-    <h1>以后这是一个侧栏，这是侧栏的标题</h1>
-    <form action="">
-      <div class="email">
-        <label for="email"><span>请输入邮箱地址</span></label>
-        <input type="text" name="email" id="email" value="这是一个文本输入框">
-        <p>邮箱地址请按要求格式输入</p>
-        <label for="psw"><span class="psw">请输入密码</span></label>
-        <input type="password" name="psw" id="psw" value="*********">
-        <br />
-        <label for="psw_again"><span>请重复输入密码</span></label>
-        <input type="password" name="psw_again" id="psw_again" value="********">
-        <p>密码请为6-16位英文数字</p>
-      </div>
+    </div>
+    <div class="team-intro">
+      <p>匿名者（英语：Anonymous）是一种理念，只要有相同想法或是理念任何人都可以加入。该组织发迹于2003年，随后在政治上形成一些共识，并发起自主性或自发性行为与活动。他们因其宣传及利用阻断服务攻击（DDoS）政府、宗教和企业网站而知名于世</p>
       <br />
-      <div class="sex">
-        <label for="sex"><span>性别</span></label>
-        <input type="radio" name="sex" id="sex" value="男" checked>男
-        <input type="radio" name="sex" value="女">女
-      </div>
-      <div class="city">
-        <label for="city"><span>城市</span></label>
-        <select name="city" id="city">
-          <option selected>北京</option>
-          <option>上海</option>
-          <option>广州</option>
-        </select>
-      </div>
-      <div class="hobby">
-      <label for="hobby"><span>爱好</span></label>
-      <input type="checkbox" name="hobby" value="sports">运动
-      <input type="checkbox" name="hobby" value="art">艺术
-      <input type="checkbox" name="hobby" value="science">科学
-      </div>
-        <div class="describle">
-        <label><span>个人描述</span></label>
-        <textarea rows="5" cols="80" placeholder="这是一个多行文本框"></textarea>
-      </div>
-      <input type="submit" name="submit" value="确认提交">
-    </form> 
-  </aside>
-  <footer>
-    <p>版权所有&copy</p>
-  </footer>
+      <p>匿名者于2003年起源于4chan的贴图区，贴图区能让许多在线和离线社区用户以一个无政府状态的方式交流，形成一个数字化的全球脑（digitized global brain）。匿名者的成员（也称为Anons）在示威或其他活动中一般带着盖伊·福克斯面具以隐藏身份。在匿名者发展早期，成员们会通常在在线社区协议一些不严格的自我约定目标，那些目标主要注重于娱乐，或弄一些恶作剧以达至幸灾乐祸的目的，但在2008年，匿名者开展了名为“Project Chanology”的行动，以抗议、恶作剧和黑客攻击的方式反对山达基教会，自此匿名者便开始合作参与更多与国际问题有关的黑客行动。</p>
+    </div>
+  </div>
 </body>
 </html>
-
