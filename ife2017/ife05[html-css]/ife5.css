@@ -1,0 +1,206 @@
+/*圣杯布局*/
+@media (max-width: 798px) {
+   .first-paragraph,.second-paragraph img {
+    width: 100%;
+  } 
+}
+body {
+    margin: 0 auto;
+    padding: 0 auto;
+    width: 100%;
+    background-color: #d3d3d3;
+  }
+  
+  /*@header css*/
+  header {
+    font-family: "微软雅黑";
+    background-color: #404040;
+  }
+  .clearfix::after {
+    display: block;
+    clear: both;
+    content: " ";
+  }
+  .clearfix {
+    *zoom: 1;
+  }
+  header img {
+    margin: 10px 20px;
+    width: 120px;
+    height: 60px;
+  }
+  .nav-list {
+    float: right;
+    line-height: 40px;
+  }
+  .nav-list ul {
+    float: right; 
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+  }
+  .nav-list li {
+    float: left;
+    margin-left: 20px;
+    font-size: 13px;
+  }
+  .nav-list a {
+    text-decoration: none;
+    color: #FFF;
+  }
+  .last-nav a {
+    color: #C0C0C0;
+  }
+
+  /*@content css*/
+  .content {
+    *zoom: 1;
+    overflow: hidden;
+    padding-right: 410px;
+    border: 1px solid #808080;
+  }
+  section {
+    float: left;
+    width: 100%;
+  }
+  .first-paragraph, 
+  .second-paragraph,
+  .third-paragraph,
+  .fouth-paragraph {
+    margin: 15px;
+    padding: 15px;
+    background-color: #FFF;
+    box-shadow: 3px 3px rgba(0,0,0,.6);
+  }
+  .first-paragraph, 
+  .second-paragraph,
+  .fouth-paragraph h2 {
+    font-size: 15px;
+    color: #808080;
+  }
+  .first-paragraph,
+  .second-paragraph,
+  .fouth-paragraph h2 + p {
+    font-size: 12px;
+    color: #808080;
+  }
+  .text-indent {
+    text-indent: 2em;
+  }
+  .text-indent a {
+    color: #0000FF;
+  }
+  .photo-album div {
+    float: left;
+    margin: 20px 10px 20px 10px;
+    width: 130px;
+    height: 130px;
+    border: 1px solid #800;
+  }
+   .photo-album p {
+    margin: 7px;
+    padding: 0;
+    font-size: 13px;
+    line-height: 15px;
+    text-align: center;
+  }
+  .photo-album img {
+    margin: 0 10px 10px 10px;
+  }
+  .table {
+    width: 100%;
+    text-align: left;
+    background-color: #C0C0C0;
+  }
+  .table .table-title {
+    background: #000;
+    color: #FFF;
+  }
+  .table tr {
+    padding: 0;
+    background-color: #FFF;
+  }
+  .table .last-row {
+    background-color: #C0C0C0;
+  }
+
+  /*@aside*/
+  aside {
+    _display: inline;
+    float: right;
+    width: 400px;
+    margin: 15px -410px 0 00px; 
+    background-color: #FFF;
+  }
+  aside h1 {
+    margin: 15px 0 15px 15px;
+    padding-left: 10px;
+    border-left: 3px solid #C0C0C0;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  
+  /*@form css*/
+  form {
+    font-size: 13px;
+  }
+  form P {
+    margin: 10px 0 10px 185px;
+    font-size: 13px;
+    color: #C0C0C0;
+  }
+  .email label {
+    margin-left: 70px;
+  }
+  label[for="psw"] {
+    margin-left: 95px;
+  }
+  .email input {
+    position: relative;
+    right: -20px; 
+    border: 1.5px solid #C0C0C0;
+  }
+  .sex label, 
+  .city label, 
+  .hobby label {
+    margin: 0 20px 0 135px;
+  }
+  .sex input, 
+  .city select,
+   .hobby input {
+    margin-bottom: 10px;
+  }
+  input[name="psw_again"],  
+  input[name="psw"] {
+    border: 1px solid #C0C0C0;
+  }
+  label[for="des"] {
+    margin: 0 20px 0 110px;
+  }
+  textarea {
+    margin-bottom: 20px;
+    vertical-align: super;
+  }
+  input[name="submit"] {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    border-radius: 8px/5px;
+    text-align: center;
+    background-color: #0000ff;
+    color: #FFF;
+    font-size: 16px;
+    font-weight: bolder;
+  }
+  footer {
+    width: 100%;
+    height: 60px;
+    border: 1px solid #000;
+    margin: 0;
+    background-color: #000;
+    color: #FFF;
+  }
+  footer p {
+    font-size: 12px;
+    text-align: center;
+  }
