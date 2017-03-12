@@ -1,0 +1,354 @@
+@charset "utf-8";
+$darkred: #d45d5c;
+$crimson: #cc8091;
+$underline: #938e8c;
+$gray: #676767;
+$green: #75b868;
+$darkblack: #767777;
+$default: #fff;
+@mixin font($value: "微软雅黑") {
+  font-family: $value;
+}
+@mixin size-height($value) {
+  font-size: $value;
+  line-height: $value;
+}
+@mixin width-height($value1,$value2) {
+  width: $value1;
+  height: $value2;
+}
+@mixin opacity($value) {
+  opacity: $value;
+  filter: alpha(opacity=$value * 100);
+}
+@mixin triangle($value,$color) {
+  border-left: $value solid transparent;
+  border-right: $value solid transparent;
+  border-bottom: $value * 2 solid $color;
+}
+body {
+  margin: 0 auto;
+  width: 980px;
+  height: 1386px;
+}
+.newspaper {
+  width: 892px;
+}
+/*@header*/
+header {
+  position: relative;
+  border: { 
+    bottom: 2px solid $underline;
+  }
+  font-size: 12px;
+  @include font("黑体");
+  color: $default;
+}
+.news-title {
+  @include width-height(110px,61px);
+  background: $darkred;
+  span {
+    position: absolute;
+    margin-left: 5px;
+    bottom: 5px;
+  }
+}
+.date {
+  position: absolute;
+  margin-bottom: 5px;
+  bottom: 0;
+  right: 0;
+  color: $darkred;
+}
+
+/*@first-layout*/
+.clearfix {
+  *zoom: 1;
+  &:after {
+    display: block;
+    content: " ";
+    clear: both;
+  }
+}
+.first-title {
+  float: right;
+  @include width-height(203px,301px);
+  border-top: 2px solid $crimson;
+  @include font;
+  div {
+    float: left;
+  }
+}
+.first-row {
+  margin-top: 10px;
+  p {
+    float: left;
+    margin: 5px 50px 0 0;
+    font-variant: small-caps;
+    @include size-height(24px);
+    text-decoration: underline;
+    color: #000;
+  }
+}
+.second-row {
+  margin-top: 5px;
+  @include size-height(12px);
+  @include font("楷体");
+  font-size: 12px;
+  color: $gray;
+}
+.third-row {
+  margin: 30px 0 5px -20px;
+  font-style: oblique; 
+  @include size-height(116px);
+  color: $green;
+}
+.fourth-row {
+  > p {
+    float: left;
+    margin: 0;
+    @include size-height(55px);
+    color: $crimson;
+  }
+}
+.fouth-row-col2 {
+  margin-left: 5px;
+  padding-top: 15px;
+  p {
+    margin: 0 0 -4px 0;
+    @include size-height(21px);
+    color: $crimson;
+  }
+  span {
+    @include size-height(12px);
+    color: #d3d3d3;
+  }
+}
+.first-pic {
+  margin-top: 24px;
+  @include width-height(641px,301px);
+  background-image: url(https://unsplash.it/641/301);
+}
+.right-mask {
+  float: right;
+  @include width-height(191px,301px);
+  background: $crimson;
+  @include opacity(.5);
+}
+.left-mask {
+  @include width-height(191px,301px);
+  background: $green;
+  @include opacity(.5);
+}
+.first-content {
+  margin-top: 24px;
+  @include width-height(641px,200px);
+  @include font;
+}
+.first-article {
+  float: left;
+  margin-left: 15px;
+  @include width-height(180px,120px);
+}
+#percent-40 {
+  width: 230px;
+}
+.title-col {
+  text-decoration: underline;
+  font-weight: bold;
+  @include size-height(16px);
+  .col1 {
+    color: #418c59;
+  }
+  .col2 {
+    color: #d299cf;
+  }
+  .col3 {
+    color: #cc7680;
+  }
+}
+.first-text-col {
+  @include size-height(12px);
+  @include font("宋体");
+  color: $darkblack;
+}
+
+/*second-layout*/
+.right-column {
+  float: right;
+  @include width-height(458px,620px);
+}
+.second-pic {
+  position: relative;
+  height: 275px;
+  background-image: url("https://unsplash.it/458/275");
+  @include font;
+}
+.bottom-mask {
+  position: absolute;
+  bottom: 0;
+  @include width-height(458px,61px);
+  @include opacity(.4);
+  background: #000;
+  div {
+    display: inline-block;
+    margin: 10px 0 10px 20px;
+    padding: 7px 0 0 10px;
+    height: 37px;
+    @include size-height(26px);
+    border-left: 3px solid #72b16a;
+    color: $default;
+  }
+  p {
+    display: inline-block;
+    margin-bottom: 10px;
+    height: 12px;
+    line-height: 12px;
+    font-style: italic;
+    color: #72b16a;
+  }
+}
+.news-column {
+  position: relative;
+  margin-top: 25px;
+  padding-top: 15px;
+  height: 318px;
+  background: #bdb76b;
+  > p {
+    position: relative;
+    margin-bottom: 20px;
+    @include size-height(16px);
+    @include font("宋体");
+    color: #5a5b5b;
+  }
+}
+.triangle {
+  position: relative;
+  top: 0;
+  margin: 0 10px 0 30px;
+  @include width-height(0,0);
+  @include triangle(5px,#483d8b);
+}
+.ellipses {
+  position: absolute;
+  right: 35px;
+  bottom: 2.5px;
+  margin-bottom: -5px;
+  @include size-height(12px);
+  font-style: oblique;
+}
+.news-column-date {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  @include width-height(260px,160px);
+  background-color: $darkred;
+  p {
+    float: left;
+    margin-top: 25px;
+    @include size-height(110px);
+    color: $default;
+    @include font;
+  }
+  div {
+    margin: 40px 0 0 70px;
+    padding-left: 10px;
+    height: 86px;
+    border-left: 2px solid #default;
+    p {
+      margin: 5px 0 8px 0;
+      text-transform: uppercase;
+      @include size-height(21px);
+      @include font("黑体");
+      color: $default;
+    }
+  }
+  .lowercase {
+    text-transform: lowercase;
+    margin-top: 10px;
+    @include size-height(12px);
+  }
+}
+.news-column-text {
+  position: absolute;
+  right: 10px;
+  bottom: 0;
+  @include width-height(150px,160px);
+  margin-right: 10px;
+  .quotes {
+    height: 30px;
+    line-height: 95px;
+    font-size: 100px;
+    @include font("黑体");
+    color: $darkred;
+  }
+  .front-quotes {
+    float: left;
+    margin: -10px 0 0 -55px;
+  }
+  .quotes-text {
+    margin-top: 10px;
+    @include size-height(14px);
+    @include font("黑体");
+    font-style: oblique;
+  }
+}
+.second-title {
+  margin: 20px 0 0 0;
+  @include width-height(415px,170px);
+  border-bottom: 2px solid #11456b;
+  p {
+    margin: 0;
+    text-transform: uppercase;
+    @include size-height(42px);
+    @include font("黑体");
+    font-weight: bold;
+    color: #11456b;
+  }
+  span {
+    @include size-height(72px);
+    font-style: oblique;
+    color: #f5e327;
+  }
+}
+.second-content {
+  margin-top: 20px;
+  @include width-height(415px,450px);
+  p {
+    margin: 0;
+    line-height: 16px;
+    font-size: 12px;
+    @include font("宋体");
+    color: $darkblack;
+  }
+  .second-content-para1:first-letter {
+    float: left;
+    margin: 0 10px 5px 5px;
+    line-height: 65px;
+    font-size: 70px;
+    @include font;
+    color: #f5e327;
+  }
+  img {
+    float: right;
+    margin: 16px 0 8px 20px;
+  }
+  .indent {
+    text-indent: 2em;
+  }
+}
+footer {
+  position: relative;
+  margin-top: 30px;
+  width: 892px;
+  border-top:1px solid $underline;
+  p {
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    @include font("黑体");
+    color: $darkred;
+  }
+}
