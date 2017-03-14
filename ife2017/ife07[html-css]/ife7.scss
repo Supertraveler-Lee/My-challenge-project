@@ -1,0 +1,139 @@
+@charset "utf-8";
+$red: #e75141;
+$gray: #787b83;
+.clearfix {
+  *zoom: 1;
+  &:after {
+    display: block;
+    content: "";
+    clear: both;
+  }
+/*header*/
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+header {
+  margin: 15px 0 0 50px;
+  font: 15px "微软雅黑";
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+  }
+  h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: 22px;
+    vertical-align: middle;
+    color: #393a3a;
+  }
+  ul {
+    float: right;
+    margin: 0 30px 24px 0;
+  }
+  li {
+    display: inline-block;
+    padding: 0 15px 22px 15px;
+  }
+  a {
+    text-decoration: none;
+    color: $gray;   
+  }
+  .nav-first {
+    border-bottom: 3px solid $red;
+    a {
+      color: $red;
+    }
+  }
+  .nav-last {
+    img {
+      width: 20px;
+      height: 20px;
+    }
+    a {
+      vertical-align: middle;
+      color: $red;
+    }
+  }
+}
+
+/*@section*/
+.first-row {
+  position: relative;
+  width: 100%;
+  img {
+    margin-top: -25px;
+    width: 100%;
+    height: 690px;
+  } 
+  div {
+    position: absolute;
+    top: 210px;
+    left: 115px;
+    width: 455px;
+    height: 230px;
+    font-family: "微软雅黑";
+  h2 {
+    margin: 0;
+    font-size: 58px;
+    color: #fff;
+    font-weight: normal;
+
+  }
+  h3 {
+    padding-left: 10px;
+    font-size: 21px;
+    color: #fffdfd;
+    font-weight: normal;
+    }
+  }
+  button {
+    margin-top: 48px;
+    padding-left: 10px;
+    width: 328px;
+    height: 68px;
+    border: none;
+    background: $red;
+    font-size:  28px;
+    color: #fff;
+  }
+}
+.second-row {
+  margin: 0 0 -20px -10px;
+  div {
+    display: inline-block;
+    width: 312px;
+    height: 250px;
+    font-size: 15px;
+    color: $gray;
+  }
+  img {
+    padding: 40px 135px 40px 135px;
+    width: 42px;
+    height: 42px;
+  }
+  p {
+    margin: 0;
+    text-align: center;
+    border-left: 2px solid $gray;
+  }
+}
+.third-row {
+  padding-top: 85px;
+  height: 331px;
+  text-align: center;
+  background: #ededed;
+  img {
+    width: 97px;
+    height: 97px;
+  }
+  p {
+    font-size: 51px;
+    color: #a1a1a1;
+  }
+}
+.fourth
