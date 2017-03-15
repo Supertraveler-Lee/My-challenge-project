@@ -51,17 +51,18 @@
       <p>关于新世界，你不知道的还有什么?</p>
     </article>
     <article class="fouth-row">
+      <div class="red-mask"></div>
       <p class="fouth-p1">查找新世界城市活动信息</p>
       <p class="fouth-p2">每个城市有不同的活动信息，请自主查询需要了解的城市</p>
-      <p>
+      <div>
         <label for="country"></label>
         <select name="country">
           <option value="中国" selected="selected">中国</option>
           <option value="冰岛">冰岛</option>
         </select>
         <label for="province"></label>
-        <select name="province">
-          <option value="省份" placeholder="省份"></option>
+        <select name="province" >
+          <option value="省份" disabled selected hidden>省份</option>
           <option value="北京市">北京市</option>
           <option value="天津市">天津市</option>
           <option value="河北省">河北省</option>
@@ -70,12 +71,48 @@
           <option value="辽宁省">辽宁省</option>
         </select>
         <select name="city">
-          <option value="城市"></option>
+          <option value="城市" disabled selected hidden>城市</option>
+          <option value="城市">东京</option>
+          <option value="城市">拉斯维加斯</option>
+          <option value="城市">伦敦</option>
         </select>
-        <input type="checkbox">
-        <label for=""></label>
-        <button type="button"></button>
-      </p>
+        <label for="search"></label>
+        <button type="button">搜索</button>
+      </div>
+    </article>
+    <article class="fifth-row">
+      <div>
+        <img src="./img/01.png">
+        <p>北京活动<br><span>新社区大联盟</span></p>
+      </div>
+      <div>
+        <p class="p-up">上     海    活    动<br><span>夜上海新景观探索</span></p>
+        <img src="./img/02.png">
+      </div>
+      <div>
+        <img src="./img/03.png">
+        <p>深圳活动<br><span>全新海岸线观点站</span></p>
+      </div>
+      <div>
+        <img src="./img/04.png">
+        <p>香港活动<br><span>奢侈活动大相送</span></p>
+      </div>
+    </article>
+    <article class="sixth-row clearfix">
+      <div class="newworld-img">
+        <h1>新世界</h1>
+        <h2>TIME</h2>
+        <h3>@新世界-北京</h3>
+        <h4>2016.04.01</h4>
+        <div></div>
+      </div>
+      <div class="newworld-text">
+        <p>新世界<span>/</span><span>01</span></p>
+        <div class="newworld-content">新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界新世界
+        </div>
+        <div>更多详情</div>
+        <img src="">
+      </div>
     </article>
   </section>
 </body>
