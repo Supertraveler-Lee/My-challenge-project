@@ -1,6 +1,16 @@
 @charset "utf-8";
 $red: #e75141;
 $gray: #787b83;
+@mixin triangle($value) {
+  position: absolute;
+  top: 50%;
+  #{$value}: 0;
+  width: 0;
+  height: 0;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-#{$value}: 30px solid #fff;
+}
 .clearfix {
   *zoom: 1;
   &:after {
@@ -223,14 +233,7 @@ button {
     background-image: url(./newworld.png);
     background-repeat: no-repeat;
     div {
-      position: absolute;
-      top: 50%;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-top: 15px solid transparent;
-      border-bottom: 15px solid transparent;
-      border-right: 30px solid #fff;
+      @include triangle(right);
     }
   }
   h1 {
@@ -241,7 +244,7 @@ button {
     line-height: 121px;
     font-size: 121px;
   }
-  h3,h4 {
+  h3, h4 {
     margin: 10px;
     font-size: 22px
   }
@@ -259,11 +262,186 @@ button {
         color: $red;
       }
     }
+    .dot {
+      float: left;
+      margin: 25px 0 0 20px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: 2px solid #929393;
+      color: #929293; 
+    }
+    .gray {
+      margin-left: 96px;
+      background: #929393;
+    }
   }
   .newworld-content {
+    margin-bottom: 30px;
     line-height: 31px;
     font-size: 13px;
     color: #cfcfcf;
     text-align: left;
+  }
+  button {
+    margin: 0 auto;
+    width: 106px;
+    height: 30px;
+    border: 2px solid #e4666a;
+    background: #fff;
+    font-size: 14px;
+    color: #e4666a;
+  }
+}
+.sev-row {
+  .sev-col {
+    float: left;
+    width: 424px;
+    height: 523px;
+    font-size: 22px;
+    p {
+      margin-top: 174px;
+      text-align: center;
+    }
+    button {
+      margin-left: 128px;
+      width: 170px;
+      height: 43px;
+      font-size: 21px;
+      background: #fff;
+    }
+  }
+  .col1 {
+    background: $red;
+    color: #fff;
+    button {
+      border: 1.5px solid #fff;
+      background: $red;
+    }
+  }
+  .col2 {
+    button {
+      border: 1.5px solid $red;
+      color: $red;
+    }
+  }
+  .col3 {
+    float: left;
+    position: relative;
+     div {
+    @include triangle(left);
+    }
+  }
+  img {
+    width: 415px;
+    height: 523px;
+  }
+}
+.eig-row {
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  h1 {
+    margin: 117px 0 7px 0;
+    font-size: 21px;
+    color: #323333;
+  }
+  hr {
+    margin: 0 auto;
+    width: 34px;
+    border: 1.5px solid $red;
+  }
+  h2 {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #cfcfcf;
+  }
+}
+.nin-row {
+  .info {
+    float: left;
+    margin: -10px 74px 0 136px;
+    width: 280px;
+    height: 282px;
+  }
+  h2 {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #323333;
+  }
+  .special-h2 {
+    margin-top: 30px;
+  }
+  p {
+    margin: 20px 0 5px 0;
+    font-size: 12px;
+    color: #cfcfcf;
+  }
+  span {
+    img {
+      margin-right: 5px;
+      vertical-align: middle;
+    }
+    margin-left: 220px;
+    font-size: 13px;
+    color: #cfcfcf;
+}
+  input,
+  button,
+  textarea {
+    border: none;
+    background: #ededee;
+    color: #8a8a8a;
+  }
+  input {
+    margin: 0 21px 15px 0;
+    padding-left: 10px;
+    width: 310px;
+    height: 38px;    
+  }
+  textarea {
+    padding: 10px 0 0 10px;
+    height: 113px;
+    width: 655px;
+    color: #8a8a8a;
+  }
+  button {
+    margin-top: 10px;
+    width: 665px;
+    height: 43px;
+    text-align: center;
+    font-size: 16px;
+    color: #323333;
+  }
+}
+.ten-row {
+  margin-top: 159px;
+  padding-top: 91px;
+  width: 100%;
+  height: 269px;
+  text-align: center;
+  background: #32363e;
+  color: #e6e6e6;
+  h1 {
+    margin-bottom: 10px;
+    font-size: 21px;
+  }
+  h2 {
+    margin-bottom: 20px;
+    font-size: 12px;
+  }
+  form {
+    input[type="email"] {
+      width: 353px;
+      height: 40px;
+    }
+    input[type="submit"] {
+      // margin-left: -5px;
+      width: 79px;
+      height: 42px;
+      // border: none;
+      background-color: #6f7278;
+      color: #e6e6e6;
+    }
   }
 }
