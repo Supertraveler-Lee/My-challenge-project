@@ -170,7 +170,7 @@ select {
   width: 237px;
   height: 37px;
   background-color: #fff;
-  background: url(./select.png) no-repeat right #fff;
+  background: url(./img/select.png) no-repeat right #fff;
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
