@@ -1,0 +1,687 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+body {
+  font-family: "Microsoft YaHei";
+}
+header {
+  padding: 10px 0;
+  width: 100%;
+  min-width: 1263px;
+  height: 35px;
+  background: #2189bf;
+}
+header .left-banner {
+  float: left;
+  position: relative;
+  margin-left: 49px;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+}
+header .left-banner div {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 15px;
+  height: 15px;
+  border-top: 3px solid #2189bf;
+  border-left: 3px solid #2189bf;
+}
+header .search {
+  position: relative;
+  float: left;
+  margin: 5px 0 0 710px;
+}
+header .search input {
+  width: 314px;
+  height: 27px;
+  border-radius: 20px/16px;
+  border-style: none;
+}
+header .search img {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 5px;
+  left: 17px;
+}
+header .right-banner {
+  float: left;
+  margin: 8px 80px 0 25px;
+  text-decoration: none;
+  font-size: 13px;
+  color: #fff;
+}
+header .right-banner img {
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+  vertical-align: middle;
+}
+.content {
+  width: 1263px;
+  height: 1211px;
+}
+.content h3 {
+  padding: 14px 0 14px 21px;
+  height: 12px;
+  background: #f4f5f7;
+  border-radius: 5px;
+  font-weight: normal;
+}
+.content .aside {
+  float: left;
+  width: 261px;
+  height: 1211px;
+  background: #2a2e3d;
+  color: #b9babe;
+}
+.content .aside .row1 {
+  margin-top: 19px;
+}
+.content .aside .row1 .circle {
+  display: inline-block;
+  margin-left: 45px;
+  width: 53px;
+  height: 53px;
+  vertical-align: middle;
+  border-radius: 50%;
+  background: #2a2e3d;
+  border: 2px solid #b9babe;
+}
+.content .aside .row1 .circle div {
+  margin: 3px;
+  width: 47px;
+  height: 47px;
+  background: #b9babe;
+  border-radius: 50%;
+}
+.content .aside .row1 span {
+  display: inline-block;
+  margin-left: 21px;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.content .aside .row2 {
+  margin: 25px 43px;
+  text-align: center;
+  font-size: 13px;
+  color: #8a8a8a;
+}
+.content .aside .row2 div {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  padding: 0 30px 0 27px;
+  border-left: 1px solid #8a8a8a;
+}
+.content .aside .row2 .favourite {
+  border: none;
+}
+.content .aside .drop-down {
+  background: #393e4e;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+.content .aside .drop-down p {
+  padding: 16px 0 0 48px;
+  margin-bottom: 15px;
+  color: #fff;
+}
+.content .aside .drop-down p img {
+  margin-right: 13px;
+  vertical-align: sub;
+}
+.content .aside .drop-down li {
+  margin: 12px 0;
+}
+.content .aside .drop-down div {
+  position: absolute;
+  left: 72px;
+  width: 16px;
+  height: 16px;
+  background: url(./img/right.png) no-repeat;
+}
+.content .aside .drop-down .per-report {
+  padding-bottom: 1px;
+}
+.content .aside .drop-down .per-report > li {
+  margin-left: 111px;
+  list-style-image: url(./img/doc8a.png);
+}
+.content .aside .drop-down .per-report .selected {
+  background: url(./img/down.png) no-repeat;
+}
+.content .aside .drop-down .per-report .doc-select {
+  list-style-image: url(./img/doc.png);
+  color: #fff;
+}
+.content .aside .drop-down .per-report2 {
+  color: #8a8a8a;
+}
+.content .aside .drop-down .per-report2 li {
+  margin-left: 20px;
+  list-style-image: url(./img/file8a.png);
+}
+.content .aside .drop-down .per-report2 .file-select {
+  list-style-image: url(./img/file.png);
+  color: #fff;
+}
+.content .aside .none-drop {
+  font-size: 12px;
+  color: #8a8a8a;
+}
+.content .aside .none-drop p {
+  padding: 16px 0 0 48px;
+  margin-bottom: 15px;
+  color: #8a8a8a;
+}
+.content .aside .none-drop p img {
+  margin-right: 13px;
+  vertical-align: sub;
+}
+.content .main {
+  margin-left: 261px;
+  padding: 20px 53px 0 61px;
+  width: 889px;
+  background: #eeeeed;
+  border: 1px solid #fff;
+  font-size: 12px;
+  color: #8a8a8a;
+}
+.content .main nav {
+  position: absolute;
+  top: 55px;
+  left: 261px;
+  height: 31px;
+  min-width: 1003px;
+  background: #fff;
+}
+.content .main nav span {
+  position: absolute;
+  margin: 7px 0 0 31px;
+}
+.content .main nav .nav {
+  position: relative;
+  margin: 7px 0 0 61px;
+  list-style-type: none;
+}
+.content .main nav .nav span {
+  position: absolute;
+  margin: 0;
+}
+.content .main nav .nav li {
+  display: inline-block;
+  margin-left: 12px;
+}
+.content .main nav .nav a {
+  text-decoration: none;
+  color: #8a8a8a;
+}
+.content .main nav .nav .current-position {
+  color: #2189bf;
+}
+.content .main .row-search {
+  position: relative;
+  margin: 50px 0 11px 0;
+  padding-top: 14px;
+  width: 887px;
+  height: 68px;
+  background: #fff;
+  border: 1px solid #ccccd2;
+}
+.content .main .row-search select {
+  padding-left: 5px;
+  margin-bottom: 6px;
+  height: 25px;
+  width: 115px;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  border: 1px solid #8a8a8a;
+  background: url(./img/down2.png) no-repeat right center;
+}
+.content .main .row-search span {
+  margin-right: 17px;
+}
+.content .main .row-search .special1 {
+  margin: 0 17px 0 32px;
+}
+.content .main .row-search .special2 {
+  margin: 0 17px 0 190px;
+}
+.content .main .row-search [name="query-item"] {
+  margin-right: 28px;
+  width: 70px;
+}
+.content .main .row-search [name="buyer"] {
+  margin-right: 61px;
+}
+.content .main .row-search [name="date"] {
+  width: 115px;
+  margin-right: 16px;
+}
+.content .main .row-search [name="time-spent"] {
+  width: 70px;
+}
+.content .main .row-search [name="seller"] {
+  margin-right: 61px;
+}
+.content .main .row-search [name="person-num"] {
+  margin-right: 20px;
+  width: 70px;
+}
+.content .main .row-search [type="search"] {
+  position: absolute;
+  top: 28px;
+  right: 90px;
+  width: 50px;
+  height: 26px;
+  text-align: center;
+  background: #2189bf;
+  border: none;
+  color: #fff;
+}
+.content .main .row-search .exchange {
+  position: absolute;
+  left: 355px;
+  top: 17px;
+  width: 16px;
+  height: 32px;
+}
+.content .main .row-search .exchange img:nth-child(1) {
+  margin: 0 0 -5px -5px;
+}
+.content .main .row-search .exchange img:nth-child(3) {
+  margin: -5px 0 0 -5px;
+  transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+}
+.content .main .row-history {
+  float: left;
+  margin-left: -5px;
+}
+.content .main .row-history div {
+  float: left;
+  margin: 12px 0 0 5px;
+  height: 64px;
+  background: #fff;
+  text-align: center;
+  font-size: 14px;
+  color: #8a8a8a;
+  border: 1px solid #ccccd2;
+}
+.content .main .row-history div .time {
+  margin: 10px 0 5px 0;
+  color: #000;
+}
+.content .main .row-history div .price {
+  font-size: 19px;
+  color: #cf4a36;
+  font-weight: bolder;
+}
+.content .main .row-history .forward, .content .main .row-history .backward {
+  width: 30px;
+}
+.content .main .row-history .forward img, .content .main .row-history .backward img {
+  margin: 24px 0 0 4px;
+  width: 18px;
+  height: 18px;
+}
+.content .main .row-history .time-price {
+  width: 112px;
+  height: 62px;
+  border-top: 2px solid #fff;
+}
+.content .main .row-history .history-query {
+  width: 104px;
+}
+.content .main .row-history .history-query img {
+  margin: 16px 3px 15px 0;
+  width: 33px;
+  height: 33px;
+  vertical-align: middle;
+}
+.content .main .row-history .history-query span {
+  vertical-align: middle;
+  color: #000;
+}
+.content .main .row-history .time-price:hover {
+  border-top: 2px solid #388ac1;
+}
+.content .main .total {
+  float: left;
+  width: 916px;
+  height: 90px;
+  margin: 25px 0 0 -29px;
+  color: #000;
+}
+.content .main .total .volume {
+  float: left;
+  position: relative;
+  margin: 5px 0 0 29px;
+  width: 195px;
+  height: 70px;
+  background: #fff;
+  border: 1px solid #ccccd2;
+}
+.content .main .total .volume p {
+  margin: 18px 0 12px 11px;
+  font-size: 11px;
+}
+.content .main .total .volume span {
+  margin-left: 11px;
+  font-size: 10px;
+  color: #8a8a8a;
+}
+.content .main .total .volume .square {
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  width: 60px;
+  height: 44px;
+}
+.content .main .total .stat-title {
+  margin-left: 29px;
+  font-size: 14px;
+}
+.content .main .total .green {
+  border-left: 4px solid #43b29d;
+}
+.content .main .total .green .square {
+  background: #43b29d;
+}
+.content .main .total .blue {
+  border-left: 4px solid #388ac1;
+}
+.content .main .total .blue .square {
+  background: #388ac1;
+}
+.content .main .total .red {
+  border-left: 4px solid #d04a36;
+}
+.content .main .total .red .square {
+  background: #d04a36;
+}
+.content .main .total .yellow {
+  border-left: 4px solid #e2cd46;
+}
+.content .main .total .yellow .square {
+  background: #e2cd46;
+}
+.content .main .project {
+  float: left;
+  margin-top: 16px;
+}
+.content .main .project .left, .content .main .project .right {
+  float: left;
+  width: 532px;
+  height: 356px;
+  border: 1px solid #ccccd2;
+  border-radius: 5px;
+  background: #fff;
+}
+.content .main .project .table-project {
+  margin: 14px 0 0 22px;
+  list-style: none;
+  color: #000;
+}
+.content .main .project .table-project li {
+  display: inline-block;
+  padding: 6px 0;
+  width: 82px;
+  height: 16px;
+  text-align: center;
+  background: #ececef;
+}
+.content .main .project .table-project .special-project {
+  background: #fff;
+  border: 1px solid #ccccd2;
+  border-radius: 5px 5px 0 0;
+  border-bottom: #fff;
+}
+.content .main .project .table {
+  margin: -1px 0 0 22px;
+  padding: 27px 51px 38px 22px;
+  width: 408px;
+  height: 188px;
+  border: 1px solid #ccccd2;
+  border-radius: 0 5px 5px 5px;
+}
+.content .main .project .table div {
+  display: inline-block;
+  width: 84px;
+  height: 14px;
+  padding: 8px 0 8px 17px;
+  margin-left: -4px;
+  border: 1px solid #ccccd2;
+  font-size: 13px;
+}
+.content .main .project .table div:first-child {
+  background: #ececef;
+}
+.content .main .project .right {
+  margin-left: 12px;
+  width: 340px;
+}
+.content .main .project .right p {
+  padding: 0 0 8px 17px;
+  margin-bottom: 3px;
+  border-bottom: 1px solid #ccccd2;
+}
+.content .main .project .right p span {
+  color: #000;
+  line-height: 19px;
+}
+.content .main .project .right .right-row1 {
+  margin: 15px 0 3px 36px;
+  width: 263px;
+}
+.content .main .project .right .row2-price {
+  display: inline-block;
+  margin-left: 36px;
+  width: 96px;
+}
+.content .main .project .right .row2-leader {
+  display: inline-block;
+  margin-left: -3px;
+  width: 150px;
+}
+.content .main .project .right .detail-des {
+  margin-left: 36px;
+  width: 263px;
+  height: 142px;
+}
+.content .main .project .right [name="protocol"] {
+  margin-left: 36px;
+}
+.content .main .project .right [name="protocol"] ~ span {
+  margin-left: 5px;
+}
+.content .main .project .right button[name="search"] {
+  margin-left: 135px;
+  width: 48px;
+  height: 25px;
+  background: #388ace;
+  border: none;
+}
+.content .main .cal-rank {
+  float: left;
+  margin-top: 16px;
+}
+.content .main .cal-rank .calendar {
+  float: left;
+  width: 352px;
+  height: 357px;
+  border: 1px solid #ccccd2;
+  border-radius: 5px;
+  background: #fff;
+}
+.content .main .cal-rank .calendar .year {
+  width: 306px;
+  height: 33px;
+  margin: 10px 22px 0 22px;
+  border-bottom: 1px solid #7fcbf0;
+}
+.content .main .cal-rank .calendar .year select {
+  margin-right: 4px;
+  height: 20px;
+  border: 1px solid #ccccd2;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  background: url(./img/select-down.png) no-repeat right;
+}
+.content .main .cal-rank .calendar .year #year {
+  width: 62px;
+}
+.content .main .cal-rank .calendar .year #month {
+  width: 86px;
+  padding-left: 35px;
+  background-size: 16px 16px;
+}
+.content .main .cal-rank .calendar .year #day {
+  width: 74px;
+}
+.content .main .cal-rank .calendar .year button {
+  width: 61px;
+  height: 20px;
+  background: #fff;
+  border: 1px solid #ccccd2;
+}
+.content .main .cal-rank .calendar .week {
+  margin-left: 22px;
+  padding: 5px 0;
+  width: 306px;
+  height: 18px;
+  border-bottom: 1px solid #ccccd2;
+}
+.content .main .cal-rank .calendar .week span {
+  margin-left: 30px;
+}
+.content .main .cal-rank .calendar .week span:first-child {
+  margin-left: 9px;
+}
+.content .main .cal-rank .calendar .day {
+  margin: 11px 0 0 22px;
+}
+.content .main .cal-rank .calendar .day div:first-child {
+  margin-left: 178px;
+}
+.content .main .cal-rank .calendar .day div {
+  display: inline-block;
+  width: 41px;
+  height: 41px;
+  vertical-align: top;
+  text-align: center;
+  color: #000;
+}
+.content .main .cal-rank .calendar .day div span {
+  color: #d04a36;
+}
+.content .main .cal-rank .rank {
+  float: left;
+  margin-left: 9px;
+  width: 524px;
+  height: 357px;
+  border: 1px solid #ccccd2;
+  border-radius: 5px;
+  background: #fff;
+}
+.content .main .cal-rank .rank table {
+  margin: 19px 41px 22px 41px;
+  border: 1px solid #ccccd2;
+  border-collapse: collapse;
+  text-align: center;
+  color: #000;
+}
+.content .main .cal-rank .rank table tr:nth-child(2) td:nth-child(3) p {
+  width: 141px;
+  background: #ec6151;
+}
+.content .main .cal-rank .rank table tr:nth-child(3) td:nth-child(3) p {
+  width: 124px;
+  background: #ef8150;
+}
+.content .main .cal-rank .rank table tr:nth-child(4) td:nth-child(3) p {
+  width: 105px;
+  background: #f19f4f;
+}
+.content .main .cal-rank .rank table tr:nth-child(5) td:nth-child(3) p {
+  width: 98px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table tr:nth-child(6) td:nth-child(3) p {
+  width: 84px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table tr:nth-child(7) td:nth-child(3) p {
+  width: 79px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table tr:nth-child(8) td:nth-child(3) p {
+  width: 75px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table tr:nth-child(9) td:nth-child(3) p {
+  width: 65px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table tr:nth-child(10) td:nth-child(3) p {
+  width: 61px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table tr:nth-child(11) td:nth-child(3) p {
+  width: 57px;
+  background: #7fcbf0;
+}
+.content .main .cal-rank .rank table td {
+  position: relative;
+  margin-left: -20px;
+  height: 25px;
+  border: 1px solid #ccccd2;
+}
+.content .main .cal-rank .rank table td .gray-bar {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  width: 167px;
+  height: 4px;
+  background: #dcdcdc;
+}
+.content .main .cal-rank .rank table td .color-rank {
+  position: absolute;
+  top: 50%;
+  left: 100px;
+  height: 4px;
+  z-index: 1;
+}
+.content .main .cal-rank .rank table td:nth-child(1) {
+  width: 70px;
+}
+.content .main .cal-rank .rank table td:nth-child(2) {
+  width: 91px;
+}
+.content .main .cal-rank .rank table td:nth-child(3) {
+  padding-left: 30px;
+  width: 261px;
+  text-align: left;
+}
+.content .main .cal-rank .rank table tr:nth-child(2) {
+  background: #f4f5f7;
+}
+
+/*# sourceMappingURL=try.css.map */
