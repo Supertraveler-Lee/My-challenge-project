@@ -3,32 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <title>task9</title>
+  <link rel="stylesheet" type="text/css" href="./reset.css">
   <link rel="stylesheet" type="text/css" href="./ife9.css">
 </head>
 <body>
   <header class="clearfix">
-    <div class="left-banner">
+    <div class="logo">
       <div></div>
     </div>
     <div class="search">
       <input type="search">
       <a href="#"><img src="./img/search.png"></a>
     </div>
-    <a class="right-banner" href="#">
+    <a class="log-in" href="#">
       <img src="./img/person.png">登录
     </a>
   </header>
   <div class="content clearfix">
     <div class="aside">
-      <div class="row1">
+      <div class="aside-row1">
         <div class="circle">
           <div></div>
         </div>
         <span class="letter">ABC123</span>
       </div>
-      <div class="row2">
-        <div class="favourite">110<br>收藏</div>
-        <div >313<br>粉丝</div>
+      <div class="aside-row2">
+        <div>110<br>收藏</div>
+        <div class="fans">313<br>粉丝</div>
       </div>
       <div class="drop-down">
         <p><img src="./img/open-doc8a.png">个人报表</p>
@@ -38,7 +39,7 @@
           <div class="selected"></div>
           <li class="doc-select">文件二
             <ul class="per-report2">
-              <li class="file-select">文档一</li>
+              <li>文档一</li>
               <li>文档二</li>
             </ul>
           </li>
@@ -74,8 +75,8 @@
           <li><a href="#" class="current-position">文档一</a></li>
         </ul>
       </nav>
-      <div class="row-search">
-        <span class="special1">查询项</span>
+      <div class="main-row1">
+        <span class="query-item">查询项</span>
         <select name="query-item" id="query-item">
           <option>第一项</option>
         </select>
@@ -89,7 +90,7 @@
         <select name="time-spent" id="time-spent">
           <option>8 天</option>
         </select>
-        <span class="special2">卖方</span>
+        <span class="seller">卖方</span>
         <select name="seller" id="seller">
           <option>小C</option>
         </select>
@@ -108,7 +109,7 @@
           <img src="./img/turn-right.png" alt="向右">
         </div>
       </div>
-      <div class="row-history clearfix">
+      <div class="main-row2 clearfix">
         <div class="forward">
           <img src="./img/forward.png" alt="向前翻页">
         </div>
@@ -144,7 +145,7 @@
           <span>历史查询</span>
         </div>
       </div>
-      <div class="total clearfix">
+      <div class="main-row3 clearfix">
         <p class="stat-title">2016年4月份统计</p>
         <div class="green volume">  
           <p>133311</p>
@@ -167,57 +168,176 @@
           <div class="square"></div>
         </div>
       </div>
-      <div class="project clearfix">
+      <div class="main-row4 clearfix">
         <div class="left">
           <h3>第一组项目</h3>
-          <ul class="table-project">
-            <li class="special-project">项目一</li>
-            <li>项目一</li>
-            <li>项目一</li>
-            <li>项目一</li>
-            <li>项目一</li>
+          <ul class="tab">
+            <li>
+              <input type="radio" name="tab" id="tab1" checked >
+              <label for="tab1">项目一</label> 
+              <div class="table">
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+              </div>
+            </li>
+            <li>
+              <input type="radio" name="tab" id="tab2">
+              <label for="tab2">项目二</label>
+              <div class="table">
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+                <div>购买材料二</div>
+              </div>
+            </li>
+            <li>
+              <input type="radio" name="tab" id="tab3">
+              <label for="tab3">项目三</label>
+              <div class="table">
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+                <div>购买材料三</div>
+              </div>
+            </li>
+            <li>
+              <input type="radio" name="tab" id="tab4">
+              <label for="tab4">项目四</label>
+              <div class="table">
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+                <div>购买材料四</div>
+              </div>
+            </li>
+            <li>
+              <input type="radio" name="tab" id="tab5">
+                <label for="tab5">项目五</label>
+                <div class="table">
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+                <div>购买材料一</div>
+              </div>
+            </li>
           </ul>
-          <div class="table">
-              <div>购买材料一</div>
-              <div>购买材料一</div>
-              <div>购买材料一</div>
-              <div>购买材料一</div>
-              <div>购买材料二</div>
-              <div>购买材料二</div>
-              <div>购买材料二</div>
-              <div>购买材料二</div>
-              <div>购买材料四</div>
-              <div>购买材料四</div>
-              <div>购买材料四</div>
-              <div>购买材料四</div>
-              <div>购买材料六</div>
-              <div>购买材料六</div>
-              <div>购买材料六</div>
-              <div>购买材料六</div>
-              <div>购买材料十二</div>
-              <div>购买材料十二</div>
-              <div>购买材料十二</div>
-              <div>购买材料十二</div>
-              <div>购买材料二十</div>
-              <div>购买材料二十</div>
-              <div>购买材料二十</div>
-              <div>购买材料二十</div>
-          </div>
         </div>
         <div class="right">
           <h3>第一组项目</h3>
           <p class="right-row1">标题<br><span>项目报表三</span></p>
-          <p class="row2-price">价格<br><span>￥158</span></p>
-          <p class="row2-leader">负责人<br><span>小A</span></p>
-          <p class="detail-des">详细描述<br><span>该项目目前负责人是......</span></p>
-          <div>
+          <p class="right-row21">价格<br><span>￥158</span></p>
+          <p class="right-row22">负责人<br><span>小A</span></p>
+          <p class="right-row3">详细描述<br><span>该项目目前负责人是......</span></p>
+          <div class="right-row4">
             <input type="checkbox" name="protocol" checked="checked">
             <span>遵守保密协议</span>
             <button name="search" value="搜索">搜索</button>
           </div>
         </div>
       </div>
-      <div class="cal-rank clearfix">
+      <div class="main-row5 clearfix">
         <div class="calendar">
           <h3>日历</h3>
           <div class="year">
@@ -230,7 +350,7 @@
             <select name="date" id="day">
               <option hidden>标注日期</option>
             </select>
-            <button value="返回日期">返回今天</button>
+            <button  name="today" value="返回日期">返回今天</button>
           </div>
           <div class="week">
             <span>一</span>
@@ -250,7 +370,7 @@
             <div>6<br>廿九</div>
             <div>7<br>三月</div>
             <div>8<br>初二</div>
-            <div><span>9</span><br>初三</div>
+            <div class="border"><span>9</span><br>初三</div>
             <div><span>10</span><br>初四</div>
             <div>11<br>初五</div>
             <div>12<br>初六</div>
@@ -260,10 +380,10 @@
             <div><span>16</span><br>初十</div>
             <div><span>17</span><br>十一</div>
             <div>18<br>十二</div>
-            <div>19<br>十三</div>
+            <div class="border">19<br>十三</div>
             <div>20<br>十四</div>
             <div>21<br>十五</div>
-            <div>22<br>十六</div>
+            <div class="border">22<br>十六</div>
             <div><span>23</span><br>十七</div>
             <div><span>24</span><br>十八</div>
             <div>24<br>十九</div>
