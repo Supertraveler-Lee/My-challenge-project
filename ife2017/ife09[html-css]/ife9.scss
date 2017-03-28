@@ -634,7 +634,7 @@ table {
 tr:hover {
    background: #f4f5f7;
 }
-td {
+th,td {
   position: relative;
   height: 25px;
   border: $border;
