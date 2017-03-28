@@ -1,0 +1,32 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre, 
+form,fieldset,input,textarea,p,blockquote,th,td { 
+    padding: 0; 
+    margin: 0; 
+} 
+.clearfix::after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+body {
+  font-family: "Microsoft Yahei";
+}
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+} 
+fieldset,img,button,input{ 
+    border: 0; 
+} 
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal; 
+}
+a {
+    text-decoration: none;
+}
+ul,li,input {
+    list-style-type: none;
+}

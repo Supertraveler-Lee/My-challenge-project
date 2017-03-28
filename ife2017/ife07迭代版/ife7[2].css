@@ -1,19 +1,7 @@
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:after {
-  display: block;
-  content: "";
-  clear: both;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
 .container {
   width: 100%;
   min-width: 1280px;
-  font-family: "Microsoft YaHei";
+  font-family: "Microsoft Yahei";
 }
 
 /*header*/
@@ -21,7 +9,7 @@ header {
   width: 100%;
   height: 60px;
 }
-header .left-title {
+.left-title {
   display: inline-block;
   position: relative;
   left: 7%;
@@ -43,9 +31,6 @@ header ul {
   width: 30%;
   height: 60px;
   line-height: 60px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 }
 header li {
   display: inline-block;
@@ -54,8 +39,7 @@ header li {
   font-size: 14px;
   cursor: pointer;
 }
-header li a {
-  text-decoration: none;
+header a {
   color: #000;
 }
 header li:hover a {
@@ -63,36 +47,36 @@ header li:hover a {
 }
 .underline {
   position: absolute;
-  border-top: 4px solid #E53C3C;
   top: 55px;
   left: 0;
+  border-top: 4px solid #E53C3C;
   transition: left .4s ease-in-out;
   -moz-transition: left .4s ease-in-out;
   -webkit-transition: left .4s ease-in-out;
 }
-header ul li:nth-child(1):hover ~ .underline {
+header li:nth-child(1):hover ~ .underline {
   left: 0;
 }
-header ul li:nth-child(2):hover ~ .underline {
+header li:nth-child(2):hover ~ .underline {
   left: 20%;
 }
-header ul li:nth-child(3):hover ~ .underline {
+header li:nth-child(3):hover ~ .underline {
   left: 40%;
 }
-header ul li:nth-child(4):hover ~ .underline {
+header li:nth-child(4):hover ~ .underline {
   left: 60%;
 }
-header ul li:nth-child(5):hover ~ .underline {
+header li:nth-child(5):hover ~ .underline {
   left: 80%;
 }
 .right-banner {
-  position: relative;
   display: inline-block;
-  font-size: 14px;
-  width: 7%;
+  position: relative;
   left: 50%;
+  width: 7%;
   height: 60px;
   line-height: 60px;
+  font-size: 14px;
   vertical-align: middle;
   text-align: center;
   cursor: pointer;
@@ -100,17 +84,17 @@ header ul li:nth-child(5):hover ~ .underline {
   background-size: 18px 18px;
   color: #E53C3C;
 }
-.right-banner .underline {
+.underline2 {
   position: absolute;
-  width: 0;
   top: 45px;
   left: 25%;
+  width: 0;
   border-top: 2px solid #E53C3C;
   transition: width .4s ease-in-out;
   -moz-transition: width .4s ease-in-out;
   -webkit-transition: width .4s ease-in-out;
 }
-.right-banner span:hover ~ .underline {
+.right-banner span:hover ~ .underline2 {
   width: 50px;
 }
 
@@ -169,8 +153,8 @@ header ul li:nth-child(5):hover ~ .underline {
   border-left: 2px solid #787b83;
 }
 .third-row {
-  width: 100%;
   padding-top: 85px;
+  width: 100%;
   height: 331px;
   text-align: center;
   background: #ededed;
@@ -185,8 +169,8 @@ header ul li:nth-child(5):hover ~ .underline {
 }
 .fouth-row {
   position: relative;
-  margin-top: -40px;
   padding-top: 55px;
+  margin-top: -40px;
   height: 338px;
   background: url(./img/map.png) no-repeat #f7f7f7;
   background-size: 100% auto;
@@ -215,13 +199,13 @@ header ul li:nth-child(5):hover ~ .underline {
 }
 .fouth-row div {
   position: relative;
-  width: 90%;
   margin: 0 auto;
+  width: 90%;
   z-index: 1;
 }
 select {
-  margin-right: 31px;
   padding-left: 10px;
+  margin-right: 31px;
   width: 20%;
   height: 37px;
   background-color: #fff;
@@ -249,8 +233,8 @@ button {
 .four-pic div {
   display: inline-block;
   width: 25%;
-  text-align: center;
   height: 395px;
+  text-align: center;
 }
 .fifth-row div img {
   padding: 8px;
@@ -276,15 +260,15 @@ button {
   text-align: center;
   color: #fff;
 }
-.sixth-row .newworld-img {
+.newworld-img {
   float: left;
   position: relative;
-  width: 66.6%;
+  width: 66.3%;
   height: 560px;
   background: url(./img/newworld.png) no-repeat;
   background-size: cover;
 }
-.sixth-row .newworld-img::after {
+.newworld-img::after {
   position: absolute;
   top: 50%;
   right: 0;
@@ -307,43 +291,43 @@ button {
   margin: 10px;
   font-size: 22px;
 }
-.sixth-row .newworld-text {
-  margin-left: 66.6%;
+.newworld-text {
   padding: 0 5%;
+  margin-left: 66.6%;
   border: 1px solid #fff;
   color: #000;
 }
-.sixth-row .newworld-text p {
+.newworld-text p {
   margin: 165px 0 20px 0;
   font-size: 22px;
 }
-.sixth-row .newworld-text p span {
+.newworld-text span {
   color: #e75141;
 }
-.sixth-row .newworld-content {
+.newworld-content {
   margin-bottom: 30px;
   line-height: 31px;
   font-size: 13px;
-  color: #cfcfcf;
   text-align: left;
+  color: #cfcfcf;
 }
 .sixth-row button {
   margin: 0 auto;
   width: 106px;
   height: 30px;
   border: 2px solid #e4666a;
-  background: #fff;
   font-size: 14px;
+  background: #fff;
   color: #e4666a;
 }
 .newworld-content ~ div {
   margin: 0 auto;
   width: 106px;
 }
-.sixth-row .newworld-text .gray {
+.gray {
   background: #929393;
 }
-.sixth-row .newworld-text .dot {
+.dot {
   float: left;
   margin: 25px 0 0 18px;
   width: 8px;
@@ -352,17 +336,17 @@ button {
   border: 2px solid #929393;
   color: #929293;
 }
-.sev-row .sev-col {
+.sev-col {
   float: left;
   width: 33.1%;
   height: 523px;
   font-size: 22px;
 }
-.sev-row .sev-col p {
+.sev-col p {
   margin-top: 174px;
   text-align: center;
 }
-.sev-row .sev-col button {
+.sev-col button {
   display: block;
   margin: 0 auto;
   width: 170px;
@@ -370,23 +354,23 @@ button {
   font-size: 21px;
   background: #fff;
 }
-.sev-row .col1 {
+.col1 {
   background: #e75141;
   color: #fff;
 }
-.sev-row .col1 button {
+.col1 button {
   border: 1.5px solid #fff;
   background: #e75141;
 }
-.sev-row .col2 button {
+.col2 button {
   border: 1.5px solid #e75141;
   color: #e75141;
 }
-.sev-row .col3 {
-  margin-left: 66.2%;
+.col3 {
   position: relative;
+  margin-left: 66.2%;
 }
-.sev-row .col3::after {
+.col3::after {
   position: absolute;
   top: 50%;
   left: 0;
@@ -451,7 +435,7 @@ button {
   font-size: 13px;
   color: #cfcfcf;
 }
-.nin-row span img {
+.nin-row img {
   margin-right: 5px;
   vertical-align: middle;
 }
@@ -466,15 +450,15 @@ button {
   color: #8a8a8a;
 }
 .nin-row input {
-  margin: 0 21px 15px 0;
   padding-left: 10px;
+  margin: 0 21px 15px 0;
   width: 310px;
   height: 38px;
 }
 .nin-row textarea {
   padding: 10px 0 0 10px;
-  height: 113px;
   width: 655px;
+  height: 113px;
   color: #8a8a8a;
 }
 .nin-row button {
@@ -486,8 +470,8 @@ button {
   color: #323333;
 }
 .ten-row {
-  margin-top: 140px;
   padding-top: 91px;
+  margin-top: 140px;
   width: 100%;
   height: 269px;
   text-align: center;
@@ -502,14 +486,14 @@ button {
   margin-bottom: 20px;
   font-size: 12px;
 }
-.ten-row form input[type="email"] {
+input[type="email"] {
   width: 433px;
   height: 40px;
 }
-.ten-row form button {
+.ten-row button {
   margin-left: -5px;
   width: 79px;
-  height: 44px;
+  height: 41px;
   vertical-align: middle;
   border-color: #6f7278;
   background-color: #6f7278;
@@ -518,7 +502,7 @@ button {
 .ten-row div {
   margin-top: 35px;
 }
-.ten-row div img {
+.ten-row img {
   margin-right: 21px;
   width: 28px;
   height: 28px;
