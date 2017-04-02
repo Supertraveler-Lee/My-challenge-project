@@ -56,3 +56,11 @@ ul li {
   right: 0;
 }
 
+@keyframes to-left {
+  0 {
+    left: 0;
+  }
+  100% {
+    left: -100%;
+  }
+}
