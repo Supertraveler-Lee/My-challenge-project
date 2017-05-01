@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
   <head>
-	<meta charset="utf-8">
-	<title>IFE JavaScript Task 01</title>
-	<script src="task.js"></script>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+    <script src="task.js"></script>
   </head>
 <body>
 
   <div>
-	<label>城市名称：<input id="aqi-city-input" type="text"></label><br>
-	<label>空气质量指数：<input id="aqi-value-input" type="text"></label><br>
-	<button id="add-btn">确认添加</button>
+    <label>城市名称：<input id="aqi-city-input" type="text"></label><br>
+    <label>空气质量指数：<input id="aqi-value-input" type="text"></label><br>
+    <button id="add-btn">确认添加</button>
   </div>
   <table id="aqi-table">
   <!-- 
-	<tr>
-	  <td>城市</td><td>空气质量</td><td>操作</td>
-	</tr>
-	<tr>
-	  <td>北京</td><td>90</td><td><button>删除</button></td>
-	</tr>
-	<tr>
-	  <td>北京</td><td>90</td><td><button>删除</button></td>
-	</tr> -->
+    <tr>
+      <td>城市</td><td>空气质量</td><td>操作</td>
+    </tr>
+    <tr>
+      <td>北京</td><td>90</td><td><button>删除</button></td>
+    </tr>
+    <tr>
+      <td>北京</td><td>90</td><td><button>删除</button></td>
+    </tr> -->
   
   </table>
 <script type="text/javascript">
@@ -30,21 +30,24 @@
 		return document.getElementById(id);
 	};
 	var Aqidata = [];
+	var table = get_id("aqi-table");
+
 
 	function addAqiData () {
 		var city = get_id("aqi-city-input").value.trim(),
 			Aqi = get_id("aqi-value-input").value.trim();
 		if(!city.match(/^[A-Za-z\u4E00-\u9FA5]+$/)) {
 			alert("输入的城市信息有误：(");
+			return ;
 		}
 		if(!Aqi.match(/^\d+$/)) {
 			alert("嘿，要输入整数喔"); 
+			return ;
 		}
 		Aqidata[city] = Aqi;
 	};
 
 	function renderAqi () {
-		var table = get_id("aqi-table");
 		table.innerHTML = '';
 		for(var city in Aqidata) {
 			if(table.children.length === 0) {
@@ -53,30 +56,25 @@
 			var fragment = document.createDocumentFragment();
 			var tr = document.createElement("tr");
 			tr.innerHTML = `<tr><td>${city}</td><td>${Aqidata[city]}</td><td><button>删除</button></td></tr>`;
-			// var td = document.createElement("td");
-			// td.innerHTML = city;
-			// tr.appendChild(td);
-			// var td2 = document.createElement("td");
-			// td2.innerHTML = Aqidata[city];
-			// tr.appendChild(td2);
-			// var td3 = document.createElement("td");
-			// td3.innerHTML = "<button>删除</button>";
-			// tr.appendChild(td3);
 			fragment.appendChild(tr);
+			table.appendChild(fragment);
 		}
-		table.appendChild(fragment);
 	}
 
 	function btnHandle () {
 		addAqiData();
 		renderAqi();
+		get_id("aqi-city-input").value = '';
+		get_id("aqi-value-input").value = '';
+
 	}
 
 	function delBtn (target) {
 		var tr = target.parentElement.parentElement;
-		var city = tr.children[0].innerHTML;
-		delete Aqidata[city];
-		renderAqi();
+		if(table.childNodes.length === 2) {
+			table.parentElement.removeChild(table);
+		}
+			table.removeChild(tr);
 	}
 
 	function init () {
