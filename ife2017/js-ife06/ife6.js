@@ -1,10 +1,8 @@
-var 
-    number = document.getElementsByClassName("number")[0],
-    unshift = document.getElementById("unshift"),
-    shift = document.getElementById("shift"),
-    push = document.getElementById("push"),
-    pop = document.getElementById("pop"),
-    data = [];
+function $ (id) {
+  return document.getElementById(id);
+}
+var data = [];
+var number = document.getElementsByClassName("number")[0];
 
 function getValue () {
   var your_value = document.getElementsByTagName("input")[0].value;
@@ -22,6 +20,7 @@ function renderData () {
     number.innerHTML += `<div class="queue">${data[i]}</div>`;  
   }
 }
+
 function addEvent (ele,event,handler) {
   if (ele.addEventListener) {
     ele.addEventListener(event,handler,false);
@@ -32,7 +31,7 @@ function addEvent (ele,event,handler) {
   }
 }
 
-addEvent(unshift,'click',function () {
+addEvent($("unshift"),'click',function () {
   var value = getValue();
   if (value !== undefined) {
     data.unshift(value);
@@ -40,12 +39,12 @@ addEvent(unshift,'click',function () {
   } 
 },false);
 
-addEvent(shift,'click',function () {
+addEvent($("shift"),'click',function () {
     data.shift();
     renderData();
 },false);
 
-addEvent(push,'click',function () {
+addEvent($("push"),'click',function () {
   var value = getValue();
   if (value !== undefined) {
     data.push(value);
@@ -53,7 +52,7 @@ addEvent(push,'click',function () {
   }
 },false);
 
-addEvent(pop,'click',function () {
+addEvent($("pop"),'click',function () {
     data.pop();
     renderData();
 },false);
