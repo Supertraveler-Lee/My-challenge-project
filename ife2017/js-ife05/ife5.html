@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <title>IFE JavaScript Task 01</title>
-    <link rel="stylesheet" type="text/css" href="ife5.css">
-  </head>
+    <link rel="stylesheet" href="ife5.css" />
+</head>
 <body>
-  <fieldset id="form-gra-time">
-    <legend>请选择日期粒度：</legend>
+<fieldset id="form-gra-time">
+    <legend>请选择日期粒度及城市</legend>
     <div class="grade">
-      <label>
-        <span class="selected">日</span>
-        <input name="gra-time" value="day" type="radio" checked="checked">
-      </label>
-      <label>
-        <span>周</span>
-        <input name="gra-time" value="week" type="radio"></label>
-      <label>
-        <span>月</span>
-        <input name="gra-time" value="month" type="radio"></label>
+        <label>
+            <span class="selected">日</span>
+            <input name="gra-time" value="day" type="radio" checked="checked">
+        </label>
+        <label>
+            <span>周</span>
+            <input name="gra-time" value="week" type="radio">
+        </label>
+        <label>
+            <span>月</span>
+            <input name="gra-time" value="month" type="radio">
+        </label>
     </div>
-  </fieldset>
+    <div class="select">
+        <select id="city-select">
+            <option>北京</option>
+        </select>
+    </div>
+</fieldset>
 
-  <fieldset>
-    <legend>请选择查看的城市：</legend>
-    <select id="city-select">
-      <option>北京</option>
-    </select>
-  </fieldset>
-
-  <div class="aqi-chart-wrap">
-  </div>
-  <script src="ife5.js"></script>
+<div id="aqi-chart-wrap">
+</div>
+<script src="ife5.js"></script>
 </body>
 </html>
