@@ -1,6 +1,3 @@
-/**
- * Created by hansneil on 21/3/16.
- */
 /* 数据格式演示
  var aqiSourceData = {
  "北京": {
@@ -76,14 +73,20 @@ function getHintLfeft(posObj, i){
 }
 
 function getTitle() {
-    switch (pageState.nowGraTime) {
-        case "day":
-            return "每日";
-        case "week":
-            return "周平均";
-        case "month":
-            return "月平均";
-    }
+      var nowGraTime = {
+        'day' : function () {
+          return "每日";
+        },
+        'week' : function () {
+          return "每周";
+        },
+        'month' : function () {
+          return "每月";
+        }
+      };
+
+      return nowGraTime[pageState.nowGraTime]();
+    //更符合面向对象的结构    
 }
 
 /**
@@ -95,16 +98,16 @@ function addEventHandler(ele, event, hanlder) {
         ele.addEventListener(event, hanlder, false);
     } else if (ele.attachEvent) {
         ele.attachEvent("on"+event, hanlder);
-    } else  {
-        ele["on" + event] = hanlder;
-    }
+    } 
 }
 
 /**
  * 渲染图表
  */
 function renderChart() {
-    var innerHTML = "", i = 0;
+    var 
+        i = 0,
+        innerHTML = "";
     var wrapper = document.getElementById("aqi-chart-wrap");
     var width = wrapper.clientWidth;
     var selectedData = chartData[pageState.nowGraTime][pageState.nowSelectCity];
@@ -163,9 +166,6 @@ function initGraTimeForm() {
                 graTimeChange(radio[m])
             })
         })(i);
-        // addEventHandler(radio[i], 'click', function () {
-        //    graTimeChange(radio[i]);
-        //  });
     }
     addEventHandler(document, 'mouseover', function(event){
         var ele = event.target;
