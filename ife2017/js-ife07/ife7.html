@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task6</title>
+  <style type="text/css">
+    .queue { 
+      margin-right: 10px;
+      padding: 8px;
+      background: red;
+      color: #fff;
+      list-style-type: none;
+     }
+    #push {
+      margin-right: 30px;
+    }
+    .number {
+      display: flex;
+      height: 250px;
+      align-items: flex-end;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="action">
+    <input type="text" placeholder="请添加10-100的数字">
+    <button id="unshift">左侧入</button>
+    <button id="push">右侧入</button>
+    <button id="shift">左侧出</button>
+    <button id="pop">右侧出</button>
+    <button id="bubble">冒泡</button>
+    <button id="rank">排序</button>
+  </div>
+
+  <ul class="number"></ul>
+  <script src="js5.js"></script>
+  
+</body>
+</html>
