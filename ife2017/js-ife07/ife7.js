@@ -13,7 +13,7 @@ function getValue () {
     alert("请输入正确的数字：(");
   }
 }
-function renderData (value) {
+function renderData () {
   number.innerHTML = '';
   for (var i = 0; i < data.length; i++) {
     number.innerHTML += `<li class="queue" style="height: ${data[i]*2}px"></li>`;  
@@ -60,34 +60,69 @@ addEvent($("pop"),'click',function () {
 function bubble (queue) {
   eles = document.querySelectorAll("li");
   var 
-      i, j, timer, 
+      i = 0,
+      j = 1, 
+      timer = null, 
       delay = 50,
       len = eles.length;
-
-  for (i = 0; i < len - 1; i++) {
-    for (j = 0; j < len - 1 - i; j++) {
-      if(eles[j].offsetHeight > eles[j+1].offsetHeight) {
-          setInterval(function () {
-            eles[j].parentNode.insertBefore(eles[j+1],eles[j]);
-          },delay);
-        
+  timer = setInterval(run,20);
+  function run() {
+    if(i < len) {
+      if (j < len) {
+        if (data[i] > data[j]) {
+          temp = data[i];
+          data[i] = data[j];
+          data[j] =  temp;
+          renderData();
+          // eles[j].style.backgroundColor = "blue";
+        }
+        j++;
+      } else {
+          i++;
+          j = i + 1;
+        } 
+    } else {
+      clearInterval(timer);
+      return;
       }
     }
   }
-  // timer = setInterval(function () {
-  //   if (i < 1 || j > len-2) {
-  //     clearInterval(timer);
-  //     return ;
-  //   }
 
-  //   if (eles[j].offsetHeight > eles[j+1].offsetHeight) {
-  //     eles[j].parentNode.insertBefore(eles[j+1],eles[j]);
-  //   }
-  //   j++;
-  // },delay);
+function shuffle (array) {
+  var currentIndex = array.length, temporaryValue, randomValue;
 
+  while (0!==currentIndex) {
+    randomValue = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomValue];
+    array[randomValue] = temporaryValue;
+  }
+  return array;
+}
+
+function random30 () {
+  var 
+      i = 0, data = [];
+  while (i < 30) {
+    randomNum = Math.floor(Math.random() * (100 - 10 + 1) + 10);
+    data.push(randomNum);
+    i++;
+  }
+  return data;
 }
 
 addEvent($("bubble"),"click",function () {
   bubble();
 },false);
+
+addEvent($("shuffle"),"click",function () {
+  shuffle(data);
+  renderData();
+},false);
+
+addEvent($("random30"),"click",function () {
+  data = random30();
+  renderData();
+},false)
