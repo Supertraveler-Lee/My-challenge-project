@@ -93,7 +93,7 @@ var data = [];
     } 
   });
 
-  addEvent($("push"),'click',function () {
+  addEvent($("push"),function () {
     var value = getValue();
     if (value !== undefined) {
       data.push(value);
