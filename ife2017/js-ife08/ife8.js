@@ -4,12 +4,14 @@ function $ (id) {
 var data = [];
 
 function render (value) {
+    $("show").innerHTML = "";
     data.forEach(function (item) {
-      if(value != null   && value.length !== 0) {
-        item.replace(new RegExp(value,"g"),`<span id="selected">${value}</span>`);
-      }
+      if(value != null && value.length !== 0) {
+        item = item.replace(new RegExp(value,"g"),`<span id="selected">${value}</span>`);
+      } 
       $("show").innerHTML += `<div id="items">${item}</div>`;
   });
+    $("textarea").value = "";
 }
   
 
