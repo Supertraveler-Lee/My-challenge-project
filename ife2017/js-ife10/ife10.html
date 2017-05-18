@@ -1,0 +1,79 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>task9</title>
+    <style type="text/css">
+      .root {
+        display: flex;
+        margin: 0 auto;
+        width: 1000px;
+        height: 400px;
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+      .child_1 {
+        display: flex;
+        margin: 20px;
+        width: 460px;
+        height: 360px;
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+      .child_2 {
+        display: flex;
+        margin: 20px;
+        width: 230px;
+        height: 320px;
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+      .child_3 {
+        display: flex;
+        margin: 20px;
+        width: 50px;
+        height: 280px;
+        border: 1px solid #000;
+        border-radius: 10px;
+      }
+      button {
+        margin: 30px 80px 0 200px;
+        width: 100px;
+        height: 50px;
+        outline: none;
+        background: pink;
+        border-radius: 10px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="child_1">
+        <div class="child_2">
+          <div class="child_3"></div>
+          <div class="child_3"></div>
+        </div>
+        <div class="child_2">
+          <div class="child_3"></div>
+          <div class="child_3"></div>
+        </div>
+      </div>
+      <div class="child_1">
+        <div class="child_2">
+          <div class="child_3"></div>
+          <div class="child_3"></div>
+        </div>
+        <div class="child_2">
+          <div class="child_3"></div>
+          <div class="child_3"></div>
+        </div>
+      </div>
+    </div>
+    
+    <button>前序</button>
+    <button>中序</button>
+    <button>后序</button>
+    <script type="text/javascript" src="ife10.js"></script>
+  </body>
+  </html>
