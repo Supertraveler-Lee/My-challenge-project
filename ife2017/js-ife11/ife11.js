@@ -67,19 +67,16 @@ addEvent(btns[0], "click", function () {
 });
 
 for (var i=0; i<2;i++) {
-  var nodeList = [];
-  var fn = {
-  "0" : depthFirst(rootNode,nodeList),
-  // "1" : breadthFirst(rootNode,nodeList)
-  };
-  // alert(fn[1]);
   addEvent(btns[i], "click", function () {
     var nodeList = [];
-    reset();
-    fn[i];
-    alert(nodeList);
-    render(nodeList);
-  });
+      reset();
+      
+      render(nodeList);
+    });
+
+ };
+
+
+function traversal() {
+  reset();
 }
-
-
