@@ -36,28 +36,27 @@ function depthFirst(node, nodeList) {
   return nodeList;
 }
 
-function render(nodeList,value) {
-  value = value || 0;
+function render(nodeList,input) {
   var len = nodeList.length,
-    i = 1;
+      value = input.toLowerCase() || null,
+      i = 1;
+  console.log(nodeList);
   lock = true;
   rootNode.className = "active";
   timer = setInterval(function() {
     if (i < len) {
-      console.log(nodeList[i-1]);
-      console.log(nodeList[i-1].data);
-      if (value.toLowerCase() !== nodeList[i-1].nodeValue.toLowerCase()) {
+      var elemText = nodeList[i-1].firstChild.nodeValue.toLowerCase().replace(/^\s+|\s+$/g,"")
+      if ( value !== elemText ) {
         nodeList[i - 1].className = "";
         nodeList[i].className = "active";
       } else {
-        nodeList[i-1].className = "select"
+        nodeList[i-1].className = "select";
         clearInterval(timer);
         lock = false;
       }
-      
     } else {
-      clearInterval(timer);
       nodeList[len - 1].className = "default";
+      clearInterval(timer);
       lock = false;
     }
     i++;
@@ -74,19 +73,17 @@ function reset() {
 }
 
 function buttons(index,nodeList) {
+  var toDepthFirst = function() {
+      depthFirst(rootNode, nodeList);
+    };
+  var toBreadthFirst = function() {
+      breadthFirst(rootNode, nodeList);
+    };
   var button = {
-    "0": function() {
-      depthFirst(rootNode, nodeList);
-    },
-    "1": function() {
-      breadthFirst(rootNode, nodeList);
-    },
-    "2" : function() {
-      depthFirst(rootNode, nodeList);
-    },
-    "3" : function() {
-      breadthFirst(rootNode, nodeList);
-    },
+    "0" : toDepthFirst,
+    "1" : toBreadthFirst,
+    "2" : toDepthFirst,
+    "3" : toBreadthFirst
   };
   if (typeof button[index] !== "function") {
     throw new Error("invalid index");
@@ -99,7 +96,6 @@ function init () {
     var nodeList= [];
     (function(i) {
       addEvent(btns[i], "click", function() {
-        console.log(lock);
         if (lock === true) {
           alert("正在遍历，请稍等...");
         } else {
@@ -108,6 +104,7 @@ function init () {
           buttons(i,nodeList);
           render(nodeList,value);
           nodeList = [];
+          indexBF = 0;
         }        
       });
     }(i));
