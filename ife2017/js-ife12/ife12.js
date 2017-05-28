@@ -4,16 +4,11 @@ var timer = null,
   input = $("input"),
   divs = $("div"),
   rootNode = document.getElementById("root"),
-  selected = document.getElementsByClassName("selected")[0];
   indexBF = 0; //广度自增标识
 
 function $(classElem) {
   return document.getElementsByTagName(classElem);
 }
-
-// function getSelected() {
-//   return document.getElementsByClassName("selected")[0];
-// }
 
 function addEvent(elem, event, handler) {
   if (elem.addEventListeren) {
@@ -26,6 +21,7 @@ function addEvent(elem, event, handler) {
 }
 
 function breadthFirst(node, nodeList) {
+  //广度优先遍历
   if (node) {
     nodeList.push(node);
     breadthFirst(node.nextElementSibling, nodeList);
@@ -35,8 +31,8 @@ function breadthFirst(node, nodeList) {
   return nodeList;
 }
 
-
 function depthFirst(node, nodeList) {
+  //深度优先遍历
   if (node) {
     nodeList.push(node);
     for (var i = 0, len = node.children.length; i < len; i++) {
@@ -47,10 +43,10 @@ function depthFirst(node, nodeList) {
 }
 
 function render(nodeList, value) {
+  //渲染
   var len = nodeList.length,
     value = value.toLowerCase() || null,
     i = 1;
-  console.log(nodeList);
   lock = true;
   rootNode.className = "active";
   timer = setInterval(function() {
@@ -73,27 +69,30 @@ function render(nodeList, value) {
 }
 
 function reset() {
+  //重置所有div为白色
   divsLen = divs.length;
   for (var i = 0; i < divsLen; i++) {
-    // if (divs[i].className === "selected") {
-    //   divs[i].className = "selected";
-    // } else {
-      divs[i].className = "default";
-    // }
+    divs[i].className = "default";
   }
 }
 
-for (var i = 0, divsLen = divs.length; i < divsLen; i++) {
-    addEvent(divs[i], "click", function() {
+function traversal(node) {
+  //遍历事件——单击变色
+  var nodeList = [];
+  begatsList = depthFirst(node, nodeList);
+  console.log(begatsList);
+  for (var i = 0, divsLen = begatsList.length; i < divsLen; i++) {
+    addEvent(begatsList[i], "click", function() {
       reset();
       this.className = "selected";
       event.stopPropagation();
       selected = this;
-  });
-};
-
+    });
+  };
+}
 
 function delButton() {
+  //删除按钮事件
   if (selected === undefined) {
     alert("未选中元素");
   } else {
@@ -102,14 +101,16 @@ function delButton() {
 }
 
 function addButton() {
+  //添加按钮时间
   if (selected === undefined) {
     alert("未选中元素");
   } else {
     var value = input[1].value;
-          if (!value) {
+    if (!value) {
       alert("未填写元素");
     } else {
       selected.innerHTML += `<div class="default">${value}</div>`;
+      traversal(selected);  //更新节点
     }
   }
 }
@@ -134,6 +135,8 @@ function buttons(index, nodeList) {
 }
 
 function init() {
+  //初始化
+  traversal(rootNode);
   for (var i = 0; i < 4; i++) {
     var nodeList = [];
     (function(i) {
@@ -158,7 +161,5 @@ function init() {
     addButton();
   });
 }
-
-
 
 init();
