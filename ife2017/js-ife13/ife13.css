@@ -1,0 +1,40 @@
+body {
+  font-family: "Microsoft YaHei";
+}
+#menu {
+  margin: 0 auto;
+  width: 40%;
+}
+p {
+  margin: 3px;
+  color: pink;
+  text-align: center;
+  height: 1.5em;
+  font-size: 1.5em;
+}
+#tree-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  margin-left: 1.5em;
+}
+.arrow {
+  display: inline-block;
+  margin-right: 7px;
+}
+.down-arrow {
+  width: 0;
+  height: 0;
+  border-top: 10px solid #000;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  cursor: pointer;
+}
+.addIcon {
+  display: none;
+  vertical-align: middle;
+}
+.visible:hover>.addIcon {
+  display: inline;
+}
