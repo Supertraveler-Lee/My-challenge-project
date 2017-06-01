@@ -35,6 +35,6 @@ p {
   display: none;
   vertical-align: middle;
 }
-.visible:hover>.addIcon {
+.menu-label:hover>.addIcon {
   display: inline;
 }
