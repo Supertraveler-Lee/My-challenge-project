@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>task14</title>
   <link rel="stylesheet" type="text/css" href="js5.css">
 </head>
@@ -9,19 +11,25 @@
 <div class="wrapper">
   <div id="space-area">
     <img id="earth" src="./earth.png">
-    <div id="spacecraft1" class="channel"></div>
-    <div id="spacecraft2" class="channel"></div>
-    <div id="spacecraft3" class="channel"></div>
-    <div id="spacecraft4" class="channel"></div>
+    <div id="spacecraft1" class="channel">
+      <div id="space1" class="space"></div>
+    </div>
+    <div id="spacecraft2" class="channel">
+      
+    </div>
+    <div id="spacecraft3" class="channel">
+    </div>
+    <div id="spacecraft4" class="channel">
+    </div>
   </div>
   <div id="console">
     <textarea id="log" rows="5" cols="10" readonly></textarea>
     <button id="createspace">创建飞船</button>
     <div id="control1" class="single-control">
-      <p class="spacenumber">飞船一号</p> 
+      <p class="spacenumber">飞船1号</p> 
       <button class="tostart">开始飞行</button>
-      <button calss="tostop">停止飞行</button>
-      <button calss="destryspace">摧毁飞船</button>
+      <button class="tostop">停止飞行</button>
+      <button class="destroyspace">摧毁飞船</button>
     </div>
   </div>
 </div>

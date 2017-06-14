@@ -79,3 +79,19 @@ button {
   background-color: #99271e;
   text-align: center;
 }
+.space {
+  position: absolute;
+  width: 100px;
+  height: 30px;
+  border-radius: 15px;
+  filter: 0;
+  border: 1px solid red;
+}
+#space1 {
+  top: -16px;
+  left: 59px;
+
+}
+textarea {
+  color: #fff;
+}
