@@ -22,51 +22,72 @@ function getClass(className) {
 
 var Commander = function() {
   this.cmd = {};
+  this.spacelist = [true];
 };
 
 Commander.prototype.init = function() {
-  var i = 1;
   var buttonCmd = [];
+  var falselist = [];
+  var that =this;
   addEvent(getId("createspace"), "click", function() {
-    i++;
-    if (i < 5) {
-      var newSpaceConsole = document.createElement("div");
-      newSpaceConsole.className = "single-control";
-      newSpaceConsole.id = "control" + i;
+    // i++;
+    for(var i = 0 ;i < that.spacelist.length;i++) {
+      console.log(that.spacelist);
+      console.log(that.spacelist[i]);
+      if (!that.spacelist[i]) {
+        that.spacelist[i] = true;
+        falselist.push(i);
+        // i = index + 1;
+        console.log(i);
+        // return;
+      }  
+    };
+    if (falselist.length === 0){
+        that.spacelist.push(true);
+        i = that.spacelist.length;
+      }
+    // --i;
+    console.log(that.spacelist,i);
+    if (that.spacelist.length <5) {
+      // var newSpaceConsole = document.createElement("div");
+      // newSpaceConsole.className = "single-control";
+      // newSpaceConsole.id = "control" + i;
+      var newSpaceConsole = getId('control'+i);
       newSpaceConsole.innerHTML = "<p class='spacenumber'>飞船" + i + "号</p> \
                           <button class='tostart'>开始飞行</button>\
                           <button class='tostop'>停止飞行</button>\
-                          <button class='destryspace'>摧毁飞船</button>";
-      getId("console").appendChild(newSpaceConsole);
+                          <button class='destroyspace'>摧毁飞船</button>";
+      // getId("console").appendChild(newSpaceConsole);
       getId('spacecraft' + i).innerHTML = "<div id = " + 'space' + i + " class='space'><div>";
       getId('space' + i).style.left = (220 + (i - 1) * 120) / 2 - 51 + 'px';
       getId('space' + i).style.top = -16 + 'px';
       buttonCmd = [];
       addButtonEvent();
-      // var ss.toSting() = new Spacecraft();
     } else {
       alert("只有4条轨道 ：(");
     }
   });
   var addButtonEvent = function() {
-    Array.prototype.forEach.call(getId('control1').getElementsByTagName("button"), function(item) {
+    [].forEach.call(getId('control1').getElementsByTagName("button"), function(item) {
       buttonCmd.push(item.className);
     });
     buttonCmd.map(function(item) {
       var buttonClass = getClass(item);
       [].forEach.call(buttonClass, function(elem, index) {
+        console.log("再来一次")
         addEvent(elem, "click", function() {
           Commander.cmd = {
             id: index + 1,
             handler: item
           };
-          // console.log(Commander.cmd);
+          console.log(Commander.cmd);
+          console.log(buttonClass);
           Mediator.deliver(buttonClass, Commander.cmd);
         });
       });
     });
   };
-  addButtonEvent();
+  // addButtonEvent();
 };
 
 var Mediator = function() {
@@ -74,9 +95,10 @@ var Mediator = function() {
 };
 
 Mediator.prototype.deliver = function(buttonClass, cmd) {
-  this.errRate = 0.3;
+  this.errRate = 0.9;
   if (Math.random() < this.errRate) {
     getId('log').innerHTML = "发送的无线电信号未收到...";
+    console.log("发送的无线电信号未收到...")
     return;
   }
   [].forEach.call(buttonClass, function(item, index) {
@@ -84,11 +106,9 @@ Mediator.prototype.deliver = function(buttonClass, cmd) {
       console.log("space" + (index + 1));
       var target = getId("space" + (index + 1));
       console.log("target:" + target);
-      // Spacecraft.id = cmd.id;
-      // Spacecraft.target = target;
-      // Spacecraft[cmd.handler]();
       Spacecraft[index].id = cmd.id;
       Spacecraft[index].target = target;
+      // console.log(this.target);
       Spacecraft[index][cmd.handler]();
     }
   });
@@ -112,14 +132,19 @@ Spacecraft.prototype.tostart = function() {
   console.log("please  start!");
   this.inSpace = true;
   this.isFly = true;
-  console.log(this);
   this.ondraw(this.target);
 
 };
 Spacecraft.prototype.destroyspace = function() {
-  console.log("please  destryspace!");
+  console.log("please  destroyspace!");
+  console.log(this.target);
   this.target.parentNode.removeChild(this.target);
+  Commander.spacelist[this.id - 1] = false;
+  console.log(Commander.spacelist[this.id]);
+  console.log(Commander.spacelist);
+  // console.log('destroy'+this.getElemTarget); 
   getId('control'+ this.id).innerHTML = ''  ;
+  // return;
 };
 Spacecraft.prototype.getLocal = function(degree) {
   var PLANET_RADIUS = 60;
@@ -154,7 +179,7 @@ Spacecraft.prototype.ondraw = function() {
       that.consumeEnergy(that.energy);
       if (percent > 0) {
         that.degree += 1;
-        that.animation(this.target, this.degree);
+        that.animation(that.target, that.degree);
       }
 
     }
@@ -163,20 +188,20 @@ Spacecraft.prototype.ondraw = function() {
     }
     that.solarEnergy(that.energy);
     that.target.innerHTML = percent + "%";
-    console.log(Math.round(that.energy));
+    // console.log(Math.round(that.energy));
   }, 40);
 }
 Spacecraft.prototype.solarEnergy = function() {
   if (this.energy < 100) {
     this.energy += 0.07;
-    console.log('energy1 = ' + this.energy);
+    // console.log('energy1 = ' + this.energy);
     return this.energy;
   };
 };
 Spacecraft.prototype.consumeEnergy = function() {
   if (this.energy > 0) {
     this.energy -= 0.14;
-    console.log('energy2 = ' + this.energy);
+    // console.log('energy2 = ' + this.energy);
     return this.energy;
   }
 };
