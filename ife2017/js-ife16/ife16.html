@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ife 16</title>
+  <style type="text/css">
+    * {
+      padding: 0;
+      margin: 0;
+      font-family: '微软雅黑';
+    }
+    form {
+     margin-top:20%;
+    }
+    fieldset {
+      margin: 30px;
+      border: none;
+      text-align: center;
+    }
+    select,input[type="text"]{
+      width: 170px;
+      height: 30px;
+    }
+    #graduate,#ungraduate {
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <form>
+    <fieldset id="student">
+      <label for="ungraduate"><input type="radio" name="people" value="在校生">在校生</label>
+      <label for="graduate"><input type="radio" name="people" value="非在校生">非在校生</label>
+    </fieldset>
+    <fieldset id="graduate">
+      <label for="city">你的城市</label>
+      <select id="city">
+        <option selected>雅典</option>
+        <option>英国</option>
+        <option>美国</option>
+        <option>澳大利亚</option>
+        </select>
+      <label for="school">你的学校</label>
+      <select id="school"></select>
+    </fieldset>
+    <fieldset id="ungraduate">
+      <label for="company">你就职的单位：</label>
+      <input type="text" placeholder="请填写公司名称">
+    </fieldset>
+  </form>
+  <script type="text/javascript" src="ife16.js"></script>
+</body>
+</html>
