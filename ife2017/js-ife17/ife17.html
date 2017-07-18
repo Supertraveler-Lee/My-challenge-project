@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>task 17</title>
+  <link rel="stylesheet" type="text/css" href="js5.css">
+</head>
+<body>
+  <aside>
+    <form>
+      <fieldset class="input" id="select_box">
+        <legend>类型</legend>
+        <label><input type="radio" name="type" value="输入框">输入框</label>
+        <label><input type="radio" name="type" value="单选框">单选框</label>
+        <label><input type="radio" name="type" value="多选框">多选框</label>
+        <label><input type="radio" name="type" value="下拉框">下拉框</label>
+        <label><input type="radio" name="type" value="文本域">文本域</label>
+      </fieldset>
+      <fieldset class="necessary" id="basic_box">
+        <legend>配置</legend>
+        <label>名称： <input type="text">姓名</label>
+        <label><input type="radio" name="necessary" selected>必填</label>
+        <label><input type="radio" name="unnecessary">选填</label>
+        <label>
+        样式：
+        <select id="style_box">
+          <option>样式一</option>
+          <option>样式二</option>
+        </select>
+        </label>
+      </fieldset>
+      <fieldset  class="text" id="rule">
+      <legend>规则</legend>
+      <label><input type="radio" name="type" value="文字" selected>文字</label>
+        <label><input type="radio" name="type" value="数字">数字</label>
+        <label><input type="radio" name="type" value="邮箱">邮箱</label>
+        <label><input type="radio" name="type" value="电话号码">电话号码</label>
+        <label><input type="radio" name="type" value="密码">密码</label></fieldset>
+      
+        <fieldset id="len_limited">
+          <legend>长度限制</legend>
+          <label>字符范围：
+          <input type="text" name="min_length" value="4"> --
+          <input type="text" name="max_length" value="16"></label>
+        </fieldset>
+        <fieldset id="others">
+          <legend>选项</legend>
+          <label><input type="text" name="items_input" placeholder="可用空格，逗号，回车分隔选项"></label>
+          <span id="items_show"></span>
+        </fieldset>
+        <button id="btn_add">add</button>
+    </form>
+  </aside>
+  <div id="show_field">
+    <h1>表单展示区</h1>
+    <button id="submit">提交</button>
+  </div>
+  <script type="text/javascript" src="js5.js"></script>
+</body>
+</html>
