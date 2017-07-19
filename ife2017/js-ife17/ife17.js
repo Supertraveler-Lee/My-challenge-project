@@ -25,7 +25,7 @@ var data_box = {
     $('#items_show'),
     document.getElementByTagName('item')
   ],
-  addbtn: $('#btn_add'),
+  addbtn: $('#add_btn'),
   result_box: $('result'),
   submit_box: $('submit')
 };
@@ -74,6 +74,141 @@ var validator = {
       }
     }
     return false;
-  }
-  
+  },
+  'email' : function() {
+    var text = this.ipt.value;
+    if(text === "") {
+      if(this.data.necessary) {
+        this.error_tip(0);
+      } else {
+        this.default_tip();
+        return true;
+      }} else {
+        if(/^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[a-z0-9]+.){1,63}[a-z0-9]+$/.test(text)) {
+          this.true_tip();
+          return true;
+        } else {
+          this.error_tip(1);
+        }
+      }
+      return false;
+    },
+    'phone' : function() {
+      var text = this.ipt.value;
+    if(text === "") {
+      if(this.data.necessary) {
+        this.error_tip(0);
+      } else {
+        this.default_tip();
+        return true;
+      } }else {
+        if(/^\d{11}$/.test(text)) {
+          this.true_tip();
+          return true;
+        } else {
+          this.error_tip(1);
+        }
+      }
+      return false;
+    },
+    'radio': function() {
+      var item = $('#'+this.data.id.getElementByTagName('input'));
+      for(var i=0; i<item.length;i++) {
+        if(item[i].checked) {
+          this.true_tip();
+          return true;
+        }
+      }
+      if(this.data.necessary) {
+        this.error_tip(0);
+      } else {
+        this.default_tip();
+        return true;
+      }
+      return false;
+    },
+    'checkbox' : function() {
+      var children = this.ipt.children;
+      for(var i in children) {
+        if(children[i].checked) {
+          this.true_tip();
+          return true;
+        }
+      }
+      if(this.data.necessary) {
+        this.error_tip(0);
+      } else {
+        this.default_tip();
+        return true;
+      }
+      return false;
+    }
+    'select': function() {
+      this.true_tip();
+      return true;
+    }
 };
+
+var data_product = new Data_product(data_box),
+    tagIpt = new TagIpt(data_box.item_box[0],data_box.item_box[1],100),
+    formArr = [];
+
+data_product.init();
+tagIpt.init();
+
+//添加菜单
+on(data_product.box.add_btn,'click',function() {
+  var data = data_product.getData();
+  if(data != null) {
+    data_product.addForm(data);
+    formArr.push(new Form(data));
+    if(data.type === 'radio' || data.type == 'checkbox') {
+      formArr[formArr.length-1].default_tip();
+    }
+  }
+});
+
+//提交菜单
+on(data_box.submit_form,'click',function() {
+  var text = "";
+  for(var i=0; i< formArr.length,i++) {
+    text += !formArr[i].validator()?formArr[i].tip.textContent + '\n':" ";
+  }
+  text === "" ?alert('提交成功') :alert(text);
+});
+
+
+function $(selector) {
+  reutrn  document.querySelector(selector);
+};
+
+function on(elem,event,handler) {
+  if(elem.addEventListener) {
+    elem.addEventListener(event.handler);
+  } else if(elem.attachElement) {
+    elem.attachElement("on"+event,handler)
+  } else {
+    elem['on'+event] = handler;
+  }
+};
+
+
+//数据产生
+function Data_product(data_box) {
+  this.box = data_box;
+  this.id = 0;
+}
+
+Data_product.prototype = {
+  init: function() {
+    this.addEvent();
+},
+
+addEvent: function() {
+  //根据选择呈现对应的表单
+    on($('#form_create'),'change',this.showTable.bind(this));
+    //选择样式一还是样式二
+    on($(this.box.style_box.box),'change',this.setStyle.this.bind(this));
+  }
+},
+
