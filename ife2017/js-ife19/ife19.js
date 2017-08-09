@@ -1,5 +1,4 @@
 var command = {
-  // statusNum: 0,
   deg: 0,
   status: "LEF",
   X: 5,
@@ -15,7 +14,6 @@ function getId(id) {
 function animate(eachDeg,callback) {
   var timer = setInterval(frame, 300);
   var id = 1;
-
   function frame() {
     if (id > 3) {
       command.status = path[command.deg/90];
@@ -33,7 +31,7 @@ function trim() {
   if (!String.prototype.trim) {
     var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
     String.prototype.trim = function() {
-      return this.relpace(trim, "");
+      return this.relpace(rtrim, "");
     };
   }
 }
@@ -47,9 +45,9 @@ function getDiv() {
 function checkBoard() {
   if (command.X > 10 || command.X <= 0 || command.Y > 10 || command.Y <= 0) {
     alert('已经到边界了');
-    return true;
-  } else {
     return false;
+  } else {
+    return true;
   }
 }
 
@@ -70,7 +68,7 @@ function move1Unit(index, value) {
       command.Y += 1;
       break;
   }
-  if (checkBoard()) {
+  if (!checkBoard()) {
     command.X = tempdeg[0];
     command.Y = tempdeg[1];
     return false;
@@ -86,19 +84,15 @@ function move1Unit(index, value) {
 function turnSquare(value) {
   switch (value) {
     case action[0] + path[0]:
-      command.statusNum -= 1;
       animate(-90);
       break;
     case action[0] + path[2]:
-      command.statusNum += 1;
       animate(90);
       break;
     case action[0] + path[4]:
-      command.statusNum += 2;
       animate(180);
       break;
     case 'GO':
-  // command.deg = path.slice(command.statusNum % 4)[0];
       command.status = path[((command.deg % 360 + 360) % 360)/90];
       move1Unit(0, action[0] + command.status);
   }
@@ -113,24 +107,23 @@ function moveSquare(value) {
   command.deg = (command.deg % 360 + 360) % 360;
   if(action[2]+command.status !== value){
     switch (value) {
-    case action[2] + path[0]:
-      diff = 0 - command.deg;
-      break;
-    case action[2] + path[1]:
-      diff = 90 - command.deg;
-      break;
-    case action[2] + path[2]:
-      diff = 180 - command.deg;
-      break;
-    case action[2] + path[3]:
-      diff = 270 - command.deg;
-      break;
+      case action[2] + path[0]:
+        diff = 0 - command.deg;
+        break;
+      case action[2] + path[1]:
+        diff = 90 - command.deg;
+        break;
+      case action[2] + path[2]:
+        diff = 180 - command.deg;
+        break;
+      case action[2] + path[3]:
+        diff = 270 - command.deg;
+        break;
     }
     animate(diff,function(){move1Unit(2,value)});
   } else {
   move1Unit(2,value);
-  }
-  
+  } 
 }
 
 function run() {
