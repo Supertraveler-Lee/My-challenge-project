@@ -1,18 +1,19 @@
 (function() {
   var path = ['LEF', 'TOP', 'RIG', 'BOT', "BACK"];
-  var action = ['TURN ', 'TRA ', 'MOVE '];
+  var action = ['TUN ', 'TRA ', 'MOV '];
+  var textarea = document.getElementsByTagName('textarea')[0];
+  var rowId = document.getElementById('rowId');
+  var selected = document.getElementById('selected');
+  var button = document.getElementsByTagName('button');
   var command = {
+    value: null,
     deg: 0,
-    status: "LEF",
+    direct: "LEF",
     X: 5,
     Y: 5
   };
 
-  function getId(id) {
-    return document.getElementById(id);
-  }
-
-  function trim() {
+  function trim() { //去除空白
     if (!String.prototype.trim) {
       var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
       String.prototype.trim = function() {
@@ -21,82 +22,77 @@
     }
   }
 
-  function animate(eachDeg, callback) {
-    var timer = setInterval(frame, 300);
+  function animate(eachDeg, callback) { //转动对应角度
+    var timer = setInterval(frame, 100);
     var id = 1;
 
     function frame() {
       if (id > 3) {
-        command.status = path[command.deg / 90];
+        command.direct = path[command.deg / 90];
         clearInterval(timer);
-        callback();
+        callback ? callback() : null;
       } else {
-        command.deg += eachDeg / 3;
-        getId('selected').style.transform = "rotate(" + command.deg + "deg)";
+        command.deg += eachDeg / 3;    //旋转所有角度都以三次为主
+        selected.style.transform = "rotate(" + command.deg + "deg)";
         id++;
       }
     }
   }
- function moveAnimate() {
 
- }
-  function getDiv() {
-    var horizontal = document.getElementsByTagName('tr')[command.Y];
-    var vertical = horizontal.getElementsByTagName('td')[command.X];
-    return vertical;
+  function moveAnimate(originLocal, length, margin) { //移动动画
+    var id = 1;
+    var newLocal = 0;
+    var timer2 = setInterval(function() {
+      if (id > Math.abs(length)) {
+        clearInterval(timer2);
+      } else {
+        newLocal += Math.sign(length) * 36.65;
+        selected.style[margin] = (originLocal * 36.65 + newLocal) + 'px';
+        id++;
+      }
+    }, 100);
   }
-function getLocal() {
-  var style = window.getComputedStyle(getId('selected'));
-  return {
-    top: style.getPropertyValue("margin-top").slice(0,-2),
-    left: style.getPropertyValue("margin-left").slice(0,-2)
-  };
-}
-console.log(getLocal().top,getLocal().left);
-  function checkBoard() {
+
+  function checkBoard(tempLocal) { //检查是否在边界
     if (command.X > 10 || command.X <= 0 || command.Y > 10 || command.Y <= 0) {
-      console.log(command.X,command.Y);
+      command.X = tempLocal[0];
+      command.Y = tempLocal[1];
       alert('已经到边界了');
-      return false;
     } else {
       return true;
     }
   }
 
-  function moveUnitN(index, value, length) {
-    var goalDiv = getDiv();
-    var length = length || 1;
-    var tempdeg = [command.X, command.Y];
-    switch (value) {
+  function moveUnitN(index, length) { //移动N格 
+    length = length || 1;
+    var tempLocal = [command.X, command.Y];
+    switch (command.value) {
       case action[index] + path[0]:
         command.X -= length;
+        checkBoard(tempLocal) ? moveAnimate(tempLocal[0], -length, 'marginLeft') : false;
         break;
       case action[index] + path[1]:
         command.Y -= length;
+        checkBoard(tempLocal) ? moveAnimate(tempLocal[1], -length, 'marginTop') : false;
         break;
       case action[index] + path[2]:
         command.X += +length;
+        checkBoard(tempLocal) ? moveAnimate(tempLocal[0], length, 'marginLeft') : false;
         break;
       case action[index] + path[3]:
         command.Y += +length;
+        checkBoard(tempLocal) ? moveAnimate(tempLocal[1], length, 'marginTop') : false;
         break;
     }
     if (!checkBoard()) {
-      command.X = tempdeg[0];
-      command.Y = tempdeg[1];
+      command.X = tempLocal[0];
+      command.Y = tempLocal[1];
       return false;
     }
-    // goalDiv.innerHTML = "";
-    // goalDiv.removeAttribute('id');
-    // var goalDiv2 = getDiv();
-    // goalDiv2.innerHTML = "<div></div>";
-    // goalDiv2.style.transform = "rotate(" + command.deg + "deg)";
-    // goalDiv2.id = 'selected';
-    
   }
 
-  function turnSquare(value) {
-    switch (value) {
+  function turnSquare(length) { //TUN命令
+    switch (command.value) {
       case action[0] + path[0]:
         animate(-90);
         break;
@@ -106,21 +102,22 @@ console.log(getLocal().top,getLocal().left);
       case action[0] + path[4]:
         animate(180);
         break;
-      case 'GO':
-        command.status = path[((command.deg % 360 + 360) % 360) / 90];
-        moveUnitN(0, action[0] + command.status, length);
+      case "GO":
+        command.direct = path[((command.deg % 360 + 360) % 360) / 90];
+        command.value = action[0] + command.direct;
+        moveUnitN(0, length);
     }
   }
 
-  function traSquare(value,length) {
-    moveUnitN(1, value, length);
+  function traSquare(length) { //TRA命令
+    moveUnitN(1, length);
   }
 
-  function moveSquare(value,length) {
+  function moveSquare(length) { //MOV命令
     var diff;
     command.deg = (command.deg % 360 + 360) % 360;
-    if (action[2] + command.status !== value) {
-      switch (value) {
+    if (action[2] + command.direct !== command.value) {
+      switch (command.value) {
         case action[2] + path[0]:
           diff = 0 - command.deg;
           break;
@@ -135,27 +132,61 @@ console.log(getLocal().top,getLocal().left);
           break;
       }
       animate(diff, function() {
-        moveUnitN(2, value, length);
+        moveUnitN(2, length);
       });
     } else {
-      moveUnitN(2, value, length);
+      moveUnitN(2, length);
     }
   }
-  function run() {
-    var value = document.getElementsByTagName("textarea")[0].value.trim();
-    var length;
-    // console.log(value.match(/(\d+)/g));
-    if(value.match(/(\d+)/g)) {
-      length = value.match(/\d+/g)[0];
-      value = value.split(/\d+/)[0].trim();
+
+  function checkName(i) { //检查名字是否合规
+    console.log(command.value);
+    var value = command.value.trim().split(/\s/);
+    if (action.indexOf(value[0] + " ") === -1 && value[0] !== "GO") {  
+      rowId.getElementsByTagName('div')[i].className = 'error';    //不合规就标红
     }
-    // console.log(length,value);
-    if (value.indexOf(action[0]) !== -1 || value === "GO") {
-      turnSquare(value, length);
-    } else if (value.indexOf(action[1]) !== -1) {
-      traSquare(value,length);
-    } else if (value.indexOf(action[2]) !== -1) {
-      moveSquare(value,length);
+    console.log(value[0],value);
+  }
+
+  function hasRowChange() {
+    var value = textarea.value.split('\n');
+    var arr = [];
+    var top = textarea.scrollTop;
+    for (var i = 1; i < value.length + 1; i++) {
+      arr.push('<div>' + i + '</div>');
+    }
+    rowId.innerHTML = arr.join("");
+    rowId.scrollTop = top;
+  }
+
+  function readTextarea() { //读取textarea
+    var i = 0;
+    var value = textarea.value.trim().split('\n');
+    var timer3 = setInterval(function() {
+      if (i < value.length) {
+        command.value = value[i].trim();
+        run(i);
+        i++;
+      } else {
+        clearInterval(timer3);
+      }
+    }, 500);
+
+  }
+
+  function run(i) {
+    var length;
+    if (command.value.match(/(\d+)/g)) {          //验证并取出数字
+      length = command.value.match(/\d+/g)[0];
+      command.value = command.value.split(/\d+/)[0].trim();
+    }
+    checkName(i);
+    if (command.value.indexOf(action[0]) !== -1 || command.value === "GO") {   //TUN 命令
+      turnSquare(length);
+    } else if (command.value.indexOf(action[1]) !== -1) {   //TRA 命令 
+      traSquare(length);
+    } else if (command.value.indexOf(action[2]) !== -1) {  //MOV 命令
+      moveSquare(length);
     }
   }
 
@@ -168,9 +199,18 @@ console.log(getLocal().top,getLocal().left);
       e["on" + event] = listener;
     }
   }
-
-  addEvent(document.getElementsByTagName("button")[0], "click", function(e) {
-    run();
+  addEvent(textarea, 'keyup', function() {
+    hasRowChange();
   });
-
+  addEvent(textarea, 'scroll', function() {
+    var top = textarea.scrollTop;
+    rowId.scrollTop = top;
+  });
+  addEvent(button[0], "click", function(e) {
+    readTextarea();
+  });
+  addEvent(button[1],'click',function(){
+    rowId.innerHTML = "";
+    textarea.value = "";
+  });
 })();

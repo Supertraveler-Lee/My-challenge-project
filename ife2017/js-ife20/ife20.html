@@ -4,6 +4,15 @@
   <meta charset="UTF-8">
   <title>task 18</title>
   <style type="text/css">
+   .info {
+      float: right;
+      width: 40%;
+      border: 2px solid #000;
+    }
+   .info ul {
+    padding-left: 10px;
+    list-style: none;
+   }
   table {
     border-collapse: collapse;
   }
@@ -32,16 +41,23 @@
     }
     #rowId {
       float: left;
-      margin-right: 2px;
       padding: 1px;
+      font-size: 12px;
+      color: #fff;
+      margin-right: 2px;
       overflow: hidden;
       background: gray;
       width: 15px;
       height: 100px;
     }
+    #rowId .error {
+      background: red;
+      border-radius: 50%;
+    }
     textarea {
       float: left;
       padding: 0;
+      font-size: 14px;
       color: darkblue;
       font-weight: bold;
       word-wrap: break-word;
@@ -63,7 +79,6 @@
       background: blue;
     }
     button {
-      display: block;
       width: 45px;
       height: 25px;
       margin-left: 100px;
@@ -71,6 +86,27 @@
   </style>
 </head>
 <body>
+ <div class="info">
+    <ul>
+    <li>在输入框中允许输入如下指令，按下按钮后，使得正方形做相应动作
+移动不能超出格子空间</li>
+    <li>GO：向蓝色边所面向的方向前进一格（一格等同于正方形的边长</li>
+    <li>TUN LEF：向左转（逆时针旋转90度）</li>
+    <li>TUN RIG：向右转（顺时针旋转90度）</li>
+    <li>TUN BAC：向右转（旋转180度）</li>
+    <li>TRA LEF：向屏幕的左侧移动一格，方向不变</li>
+    <li>TRA TOP：向屏幕的上面移动一格，方向不变</li>
+    <li>TRA RIG：向屏幕的右侧移动一格，方向不变</li>
+    <li>TRA BOT：向屏幕的下面移动一格，方向不变</li>
+    <li>MOV LEF：方向转向屏幕左侧，并向屏幕的左侧移动一格</li>
+    <li>MOV TOP：方向转向屏幕上面，向屏幕的上面移动一格</li>
+    <li>MOV RIG：方向转向屏幕右侧，向屏幕的右侧移动一格</li>
+    <li>MOV BOT：方向转向屏幕下面，向屏幕的下面移动一格</li>
+    <li>GO 3：向当前方向前进三格</li>
+    <li>TRA TOP 2：向屏幕上方平移两格</li>
+    <li>MOV RIG 4：方向转向屏幕右侧，向屏幕的右侧移动四格</li>
+    </ul>
+  </div>
   <table border="0" id="showarea">
   <div id="selected"><div></div></div>
     <tr id="row1">
@@ -218,12 +254,14 @@
     </tr>
   </table>
   <div id="command">
-    <div id="rowId"></div>
+    <div id="rowId">
+    </div>
     <textarea></textarea>
   </div>
   
   <br />
   <button type="submit">提交</button>
+  <button >清空</button>
   <script type="text/javascript" src="ife20.js"></script>
 </body>
 </html>
